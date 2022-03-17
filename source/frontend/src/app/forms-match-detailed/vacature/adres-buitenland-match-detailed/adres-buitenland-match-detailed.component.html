@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-4">
+    <div>
+      <label class="form-label">Landencode ISO</label>
+      <div class="ml-3">
+        <p>{{landencodeIso}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Landsnaam</label>
+      <div class="ml-3">
+        <p>{{landsnaam}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Locatieomschrijving</label>
+      <div class="ml-3">
+        <p>{{locatieomschrijvingBuitenland}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-4">
+    <div>
+      <label class="form-label">Woonplaats</label>
+      <div class="ml-3">
+        <p>{{woonplaatsnaamBuitenland}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Postcode</label>
+      <div class="ml-3">
+        <p>{{postcodeBuitenland}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Regionaam</label>
+      <div class="ml-3">
+        <p>{{regionaamBuitenland}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div *ngIf="isStraatadresBuitenlandVar; else postbusBlock">
+      <app-straatadres-buitenland-match-detailed
+        [data]="getStraatadresBuitenland()"></app-straatadres-buitenland-match-detailed>
+    </div>
+
+    <ng-template #postbusBlock>
+      <app-postbusadres-buitenland-match-detailed
+        [data]="getPostbusadresBuitenland()"></app-postbusadres-buitenland-match-detailed>
+    </ng-template>
+
+  </div>
+</div>
+
+

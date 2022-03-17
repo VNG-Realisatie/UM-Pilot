@@ -1,0 +1,428 @@
+[
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 40
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 2
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Secretaresse"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "B"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 2,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "VMBO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Secretaresse"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "1",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	},
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 40
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 1
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Magazijnbediende"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "B"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 4,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "MBO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Magazijnbediende"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "2",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	},
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 24
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 4
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Softwaredeveloper"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "A"
+				},
+				{
+					"codeSoortRijbewijs": "B"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 5,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "HBO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Softwaredeveloper"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "3",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	},
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 32
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 1
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Pakketdienstbezorger"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "BE"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 6,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "WO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Pakketdienstbezorger"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "4",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	},
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 16
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 3
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Vrachtwagenschaufeur"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "A"
+				},
+				{
+					"codeSoortRijbewijs": "B"
+				},
+				{
+					"codeSoortRijbewijs": "C"
+				},
+				{
+					"codeSoortRijbewijs": "D"
+				},
+				{
+					"codeSoortRijbewijs": "BE"
+				},
+				{
+					"codeSoortRijbewijs": "CE"
+				},
+				{
+					"codeSoortRijbewijs": "DE"
+				},
+				{
+					"codeSoortRijbewijs": "T"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 2,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "VMBO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Vrachtwagenschaufeur"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "5",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	},
+	{
+		"werktijden": {
+			"aantalWerkurenPerWeekMaximaal": 32
+		},
+		"vervoermiddel": [
+			{
+				"codeVervoermiddel": 1
+			}
+		],
+		"indicatieLdrRegistratie": 2,
+		"telefoonnummer": [
+			"088-1234567"
+		],
+		"bemiddelingsberoep": [
+			{
+				"naamBeroepOngecodeerd": "Metselaar"
+			}
+		],
+		"contactpersoon": [
+			{
+				"naamContactpersoonAfdeling": "Henk Vermeer(Acme Bemiddeling)"
+			}
+		],
+		"arbeidsmarktkwalificatie": {
+			"taalbeheersing": [
+				{
+					"codeNiveauTaalbeheersingSchriftelijk": 4,
+					"codeTaal": "nld",
+					"codeNiveauTaalbeheersingMondeling": 4
+				}
+			],
+			"rijbewijs": [
+				{
+					"codeSoortRijbewijs": "B"
+				}
+			],
+			"opleiding": [
+				{
+					"codeNiveauOpleiding": 2,
+					"codeStatusOpleiding": 1,
+					"indicatieDiploma": 1,
+					"opleidingsnaam": {
+						"naamOpleidingOngecodeerd": "VMBO"
+					}
+				}
+			],
+			"werkervaring": [
+				{
+					"beroep": {
+						"naamBeroepOngecodeerd": "Metselaar"
+					}
+				}
+			]
+		},
+		"idWerkzoekende": "6",
+		"sector": [
+			{
+				"codeSbi": 99999
+			}
+		],
+		"mobiliteit": {
+			"bemiddelingspostcode": "1234AB"
+		},
+		"emailadres": [
+			"Piet@testdorp.org"
+		]
+	}
+]

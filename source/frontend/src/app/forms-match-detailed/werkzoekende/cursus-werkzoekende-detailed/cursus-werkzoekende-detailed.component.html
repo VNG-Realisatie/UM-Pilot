@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb-3">Cursus</h2>
+  </div>
+</div>
+<div *ngFor="let cursus of cursussen">
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label class="form-label">Naam cursus</label>
+        <div class="ml-3">
+          <p>{{cursus.naamCursus}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label class="form-label">Datum certificaat</label>
+        <div class="ml-3">
+          <p>{{cursus.datumCertificaat | date : 'dd-MM-yyyy'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label class="form-label">Datum aanvang volgen cursus</label>
+        <div class="ml-3">
+          <p>{{cursus.datumAanvangVolgenCursus| date : 'dd-MM-yyyy'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label class="form-label">Datum einde volgen cursus</label>
+        <div class="ml-3">
+          <p>{{cursus.datumEindeVolgenCursus| date : 'dd-MM-yyyy'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <label class="form-label">Naam opleidingsinstituut</label>
+      <div class="ml-3">
+        <p>{{cursus.naamOpleidingsinstituut}}</p>
+      </div>
+    </div>
+  </div>
+</div>

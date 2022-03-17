@@ -1,0 +1,49 @@
+<div class="row mb-3">
+  <div class="col-5 border-right">
+    <div>
+      <h2> Code werk en denk niveau werkzoekende</h2>
+      <div class="ml-3">
+        <p>{{codeWerkEnDenkniveauWerkzoekende}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-5">
+    <app-vakvaardigheid-match [data]="arbeidsmarktkwalificatie"></app-vakvaardigheid-match>
+  </div>
+</div>
+
+
+<div class="row border-top mb-3">
+  <div class="col-5 border-right">
+    <app-gedragscompetentie-match [data]="arbeidsmarktkwalificatie"></app-gedragscompetentie-match>
+  </div>
+  <div class="col-5">
+    <app-rijbewijs-match [data]="arbeidsmarktkwalificatie"></app-rijbewijs-match>
+  </div>
+</div>
+
+<div class="row border-top mb-3">
+  <div class="col-5 border-right">
+    <app-cursus-werkzoekende-detailed [data]="arbeidsmarktkwalificatie"></app-cursus-werkzoekende-detailed>
+  </div>
+  <div class="col-6">
+    <app-opleiding-werkzoekende-detailed [data]="arbeidsmarktkwalificatie"></app-opleiding-werkzoekende-detailed>
+  </div>
+</div>
+
+
+<div class="row border-top mb-3">
+  <div class="col-5 border-right">
+    <app-taalbeheersing-match [data]="arbeidsmarktkwalificatie"></app-taalbeheersing-match>
+  </div>
+  <div class="col-6">
+    <app-werkervaring-werkzoekende-detailed
+      [data]="arbeidsmarktkwalificatie"></app-werkervaring-werkzoekende-detailed>
+  </div>
+</div>
+
+<div class="row border-top mb-3">
+  <div class="col-5 border-right">
+    <app-interesse-detailed [data]="arbeidsmarktkwalificatie"></app-interesse-detailed>
+  </div>
+</div>

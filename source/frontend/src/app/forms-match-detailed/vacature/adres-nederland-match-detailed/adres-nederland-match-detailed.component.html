@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-4">
+    <div>
+      <label class="form-label">Code gemeente</label>
+      <div class="ml-3">
+        <p>{{codeGemeente}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">District</label>
+      <div class="ml-3">
+        <p>{{district}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Gemeentedeel</label>
+      <div class="ml-3">
+        <p>{{gemeentedeel}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Gemeentenaam</label>
+      <div class="ml-3">
+        <p>{{gemeentenaam}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Identificatie code nummeraanduiding</label>
+      <div class="ml-3">
+        <p>{{identificatiecodeNummeraanduiding}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div>
+      <label class="form-label">Identificatie code verblijfplaats</label>
+      <div class="ml-3">
+        <p>{{identificatiecodeVerblijfplaats}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Locatieomschrijving</label>
+      <div class="ml-3">
+        <p>{{locatieomschrijving}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Postcode</label>
+      <div class="ml-3">
+        <p>{{postcode}}</p>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label">Woonplaatsnaam</label>
+      <div class="ml-3">
+        <p>{{woonplaatsnaam}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div *ngIf="typeAdres == 0">
+      <app-straatadres-match-detailed [data]="getStraatadres()"></app-straatadres-match-detailed>
+    </div>
+    <div *ngIf="typeAdres == 1">
+      <app-postbusadres-match-detailed [data]="getPostbusadres()"></app-postbusadres-match-detailed>
+    </div>
+    <div *ngIf="typeAdres == 2">
+      <app-antwoordnummeradres-match-detailed
+        [data]="getAntwoordnummeradres()"></app-antwoordnummeradres-match-detailed>
+    </div>
+
+  </div>
+
+</div>
+
+
+

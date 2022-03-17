@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-3">
+    <h2 class="mb-3">Adreshouding</h2>
+  </div>
+</div>
+<div *ngFor="let adreshouding of adreshoudingen; let i=index">
+  <div class="row">
+    <div class="col-3">
+
+      <label class="form-label">Functie adres</label>
+      <div class="ml-3">
+        <p>{{adreshouding.codeFunctieAdres}}</p>
+      </div>
+
+      <label class="form-label">Datum aanvang adres</label>
+      <div class="ml-3">
+        <p>{{adreshouding.datumAanvangAdres}}</p>
+      </div>
+
+      <label class="form-label">Datum einde adres</label>
+      <div class="ml-3">
+        <p>{{adreshouding.datumEindeAdres}}</p>
+      </div>
+
+    </div>
+    <div class="col-9">
+      <div *ngIf="checkControl(adreshouding.adres); else buitenlandBlock">
+        <!-- Type checking is done in checkControl-->
+        <app-adres-nederland-match-detailed
+          [data]="$any(adreshouding.adres)"></app-adres-nederland-match-detailed>
+      </div>
+
+      <ng-template #buitenlandBlock>
+        <app-adres-buitenland-match-detailed
+          [data]="$any(adreshouding.adres)"></app-adres-buitenland-match-detailed>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+
+

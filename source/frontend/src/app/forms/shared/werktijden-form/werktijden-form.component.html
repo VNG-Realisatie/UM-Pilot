@@ -1,0 +1,40 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Werktijden</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <label>Aantal werkuren per week minimaal</label>
+      <input type="number" class="form-control" formControlName="aantalWerkurenPerWeekMinimaal"
+             [ngClass]="(f.aantalWerkurenPerWeekMinimaal.touched || f.aantalWerkurenPerWeekMinimaal.dirty)  && f.aantalWerkurenPerWeekMinimaal.invalid ? 'is-invalid' : '' "
+      >
+      <div class="invalid-feedback">
+        Incorrecte aantal uren per week
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div>
+        <label>Indicatie kantoortijden</label>
+        <select-enum [control]='getControl("indicatieKantoortijden")'
+                     [values]="indicatieThreeValues"></select-enum>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Aantal werkuren per week maximaal</label>
+        <input type="number" class="form-control" formControlName="aantalWerkurenPerWeekMaximaal"
+               [ngClass]="(f.aantalWerkurenPerWeekMaximaal.touched || f.aantalWerkurenPerWeekMaximaal.dirty) && f.aantalWerkurenPerWeekMaximaal.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Incorrecte aantal uren per week
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

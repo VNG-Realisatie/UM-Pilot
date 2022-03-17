@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb-3">Bemiddelingsberoep</h2>
+  </div>
+</div>
+
+<div *ngFor="let beroep of beroepen">
+  <div class="row ">
+    <div class="col-12">
+      <div class="card bg-light p-3 mb-3">
+
+        <div *ngIf='beroep.type; else notCoded'>
+          <app-beroepsnaam-gecodeerd-match
+            [data]='beroep.beroepsnaam'></app-beroepsnaam-gecodeerd-match>
+        </div>
+        <ng-template #notCoded>
+          <app-beroepsnaam-ongecodeerd-match
+            [data]='beroep.beroepsnaam'></app-beroepsnaam-ongecodeerd-match>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,37 @@
+<!-- Navigation panel-->
+<div class="d-flex">
+  <ul ngbNav #nav="ngbNav" class="nav-pills" orientation="vertical">
+    <li ngbNavItem="1">
+      <a ngbNavLink routerLink="/import-werkzoekenden">Importeer werkzoekenden</a>
+    </li>
+    <li ngbNavItem="2">
+      <a ngbNavLink routerLink="/werkzoekende/list">Geüploade werkzoekenden</a>
+    </li>
+    <li ngbNavItem="3">
+      <a ngbNavLink routerLink="/request-werkzoekende">Vraag werkzoekenden aan</a>
+    </li>
+    <li ngbNavItem="4">
+      <a ngbNavLink routerLink="/werkzoekende/vraagid-list">Verzoeken van werkzoekenden</a>
+    </li>
+    <li ngbNavItem="5">
+      <a ngbNavLink routerLink="/import-vacatures">Importeer vacatures</a>
+    </li>
+    <li ngbNavItem="6">
+      <a ngbNavLink routerLink="/vacature/list">Geüploade vacatures</a>
+    </li>
+    <li ngbNavItem="7">
+      <a ngbNavLink routerLink="/request-vacature">Vraag vacatures aan</a>
+    </li>
+    <li ngbNavItem="8">
+      <a ngbNavLink routerLink="/vacature/vraagid-list">Verzoeken van vacatures</a>
+    </li>
+    <li ngbNavItem="9">
+      <a ngbNavLink routerLink="/rapportage">Rapportage</a>
+    </li>
+    <li ngbNavItem="10">
+      <a ngbNavLink (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</div>
+
+

@@ -1,0 +1,62 @@
+<div [formGroup]="form">
+  <div class="row mb-3">
+    <div class="col-3">
+      <h3 class="mb-2">Werkervaring</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1 "
+              (click)="addWerkervaring()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div formArrayName="werkervaring" *ngFor="let werkervaringControl of t.controls; let i=index">
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="col-4">
+
+              <div>
+                <label>Datum aanvang werkzaamheden</label>
+                <app-calendar-picker
+                  [control]="$any(werkervaringControl).get('datumAanvangWerkzaamheden')"></app-calendar-picker>
+              </div>
+
+              <div>
+                <label>Datum aanvang werkzaamheden</label>
+                <app-calendar-picker
+                  [control]="$any(werkervaringControl).get('datumEindeWerkzaamheden')"></app-calendar-picker>
+              </div>
+
+              <label>Naam organisatie</label>
+              <textarea type="text" class="form-control" formControlName="naamOrganisatie"
+                        [ngClass]="(werkervaringControl.get('naamOrganisatie')?.touched ||
+                         werkervaringControl.get('naamOrganisatie')?.dirty)
+                         && werkervaringControl.get('naamOrganisatie')?.invalid ? 'is-invalid' : '' "
+              ></textarea>
+              <div class="invalid-feedback">
+                Incorrecte naam organisatie
+              </div>
+            </div>
+
+            <div class="col-7">
+              <app-beroep-form
+                (formReady)="updateWerkervaring($any(werkervaringControl), $event)">
+              </app-beroep-form>
+            </div>
+
+
+            <div class="col-1 align-self-center">
+              <button type="button" class="btn btn-outline-danger" (click)="removeWerkervaring(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

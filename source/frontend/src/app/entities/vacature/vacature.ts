@@ -1,0 +1,43 @@
+import {ArbeidsVoorwaarden} from './arbeidsVoorwaarden';
+import {Beroepsnaam} from '../shared/beroepsnaam';
+import {Contractvorm} from '../shared/contractvorm';
+import {Cursus} from './cursus';
+import {Flexibiliteit} from '../shared/flexibiliteit';
+import {Gedragscompetentie} from '../shared/gedragscompetentie';
+import {ModelDate} from '../shared/modelDate';
+import {Opleiding} from './opleiding';
+import {Rijbewijs} from '../shared/rijbewijs';
+import {SectorBeroepsEnBedrijfsleven} from '../shared/sectorBeroepsEnBedrijfsleven';
+import {Sollicitatiewijze} from './sollicitatiewijze';
+import {Taalbeheersing} from '../shared/taalbeheersing';
+import {Vakvaardigheid} from '../shared/vakvaardigheid';
+import {Vervoermiddel} from '../shared/vervoermiddel';
+import {Werkervaring} from './werkervaring';
+import {Werkgever} from './werkgever';
+import {Werktijden} from './werktijden';
+
+export interface Vacature {
+  idVacature?: string;
+  naamVacature?: string;
+  nummerVacature?: string;
+  omschrijvingVacature?: string;
+  codeWerkEnDenkniveauMinimaal?: string;
+  indicatieLdrRegistratie?: number;
+  sluitingsDatumVacature?: ModelDate;
+  sollicitatiewijze?: Array<Sollicitatiewijze>;
+  werkgever?: Werkgever;
+  sector?: SectorBeroepsEnBedrijfsleven;
+  arbeidsVoorwaarden?: ArbeidsVoorwaarden;
+  contractvorm?: Array<Contractvorm>;
+  beroep?: Beroepsnaam;
+  werkervaring?: Array<Werkervaring>;
+  rijbewijs?: Array<Rijbewijs>;
+  vervoermiddel?: Array<Vervoermiddel>;
+  flexibiliteit?: Flexibiliteit;
+  werktijden?: Werktijden;
+  cursus?: Array<Cursus>;
+  opleiding?: Array<Opleiding>;
+  gedragscompetentie?: Array<Gedragscompetentie>;
+  vakvaardigheid?: Array<Vakvaardigheid>;
+  taalbeheersing?: Array<Taalbeheersing>;
+}

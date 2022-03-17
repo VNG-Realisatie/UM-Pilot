@@ -1,0 +1,18 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb-2">Rijbewijs</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div>
+      <div *ngFor="let rijbewijs of rijbewijzen">
+        <label class="form-label">Rijbewijs code</label>
+        <div class="ml-3">
+          <p>{{rijbewijs.codeSoortRijbewijs}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,115 @@
+<form class="needs-validation" [formGroup]="form" novalidate>
+  <div class="row mb-3">
+    <div class="col-5 border-right">
+      <app-basic-information-vacature
+        (valueChangesPostcodeAndStraal)="onValueChangeRequestInfo($event)"
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormGroup('basic', $event)"></app-basic-information-vacature>
+    </div>
+    <div class="col-5">
+      <app-arbeidsvoorwaarden-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormGroup('arbeidsVoorwaarden', $event)"></app-arbeidsvoorwaarden-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-flexibiliteit-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormGroup('flexibiliteit', $event)"></app-flexibiliteit-form>
+    </div>
+    <div class="col-5">
+      <app-werktijden-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormGroup('werktijden', $event)"></app-werktijden-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-beroep-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="replaceOrAddChildFormGroup('beroep', $event)"></app-beroep-form>
+    </div>
+    <div class="col-5">
+      <app-sector-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormGroup('sector', $event)"></app-sector-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-contractvorm-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('contractvorm', $event)"></app-contractvorm-form>
+    </div>
+    <div class="col-5">
+      <app-sollicitatiewijze-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('sollicitatiewijze', $event)"></app-sollicitatiewijze-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-werkervaring-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('werkervaring', $event)"></app-werkervaring-form>
+    </div>
+    <div class="col-5">
+      <app-vervoermiddel-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('vervoermiddel', $event)"></app-vervoermiddel-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-cursus-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('cursus', $event)"></app-cursus-form>
+    </div>
+    <div class="col-5">
+      <app-opleiding-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('opleiding', $event)"></app-opleiding-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-gedragscompetentie-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('gedragscompetentie', $event)"></app-gedragscompetentie-form>
+    </div>
+    <div class="col-5">
+      <app-vakvaardigheid-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('vakvaardigheid', $event)"></app-vakvaardigheid-form>
+    </div>
+  </div>
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-taalbeheersing-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('taalbeheersing', $event)"></app-taalbeheersing-form>
+    </div>
+    <div class="col-5">
+      <app-rijbewijs-form
+        (valueChangeVacature)="onValueChange($event)"
+        (formReady)="addChildFormArray('rijbewijs', $event)"></app-rijbewijs-form>
+    </div>
+  </div>
+
+
+  <button class="btn btn-secondary mb-3 mr-3" type="submit" [disabled]="submitted || form.invalid" (click)="onSubmit()">
+    Dien
+    verzoek in
+  </button>
+
+  <div *ngIf="submitted" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</form>

@@ -1,0 +1,183 @@
+[
+{
+    "idVacature": "1e3abbcc",
+    "naamVacature": "Timmerman Eindhoven",
+    "nummerVacature": "24763",
+    "omschrijvingVacature": "Wij zoeken een timmerman voor een project in Eindhoven voor een duratie van 4 maanden.",
+    "codeWerkEnDenkniveauMinimaal": "4",
+    "indicatieLdrRegistratie": 1,
+    "sluitingsDatumVacature": "2022-02-24",
+    "sollicitatiewijze": [
+      {
+        "codeSollicitatiewijze": "4",
+        "webadres": {
+          "codeWebadres": 3,
+          "url": "url.nl"
+        }
+      }
+    ],
+    "werkgever": {
+      "handelsnaamOrganisatie": "Koninklijke BAM",
+      "webadres": [
+        {
+          "codeWebadres": 3,
+          "url": "url.nl"
+        }
+      ],
+      "adresHouding": [
+        {
+          "codeFunctieAdres": "B",
+          "datumAanvangAdres": "2000-01-05",
+          "datumEindeAdres": "2025-01-05",
+          "adres": {
+            "adresNederland": {
+              "codeGemeente": "0178",
+              "district": "Eindhoven",
+              "gemeentedeel": "Zuid",
+              "gemeentenaam": "Eindhoven",
+              "identificatiecodeNummeraanduiding": "7363",
+              "identificatiecodeVerblijfplaats": "38973",
+              "locatieomschrijving": "Zuid Eindhoven",
+              "postcode": "4600AA",
+              "woonplaatsnaam": "Eindhoven",
+              "adresDetails": {
+                "straatadres": {
+                  "aanduidingBijHuisnummer": "st",
+                  "huisletter": "A",
+                  "huisnummer": 33,
+                  "huisnummertoevoeging": "A",
+                  "naamOpenbareRuimte": "Openbare ruimte",
+                  "straatnaam": "Straatnaam",
+                  "woonbootverwijzing": "st",
+                  "woonwagenverwijzing": "st"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "contactpersoon": [
+        {
+          "naamContactpersoonAfdeling": "Michael Johnson",
+          "telefoonnummer": [
+            "0612345678"
+          ],
+          "emailadres": [
+            "michael@email.com"
+          ]
+        }
+      ],
+      "sector": [
+        {
+          "codeSbi": 30098
+        }
+      ]
+    },
+    "sector": {
+      "codeSbi": 20098
+    },
+    "arbeidsVoorwaarden": {
+      "datumAanvangWerkzaamheden": "2022-01-22",
+      "datumEindeWerkzaamheden": "2022-02-22",
+      "omschrijvingArbeidsvoorwaarden": "Flexibele werktijden zijn mogelijk",
+      "salarisIndicatie": "2500"
+    },
+    "contractvorm": [
+      {
+        "codeTypeArbeidscontract": "B",
+        "codeTypeOvereenkomst": "01"
+      }
+    ],
+    "beroep": {
+      "codeBeroepsnaam": "20039",
+      "omschrijvingBeroepsnaam": "Timmerman"
+    },
+    "werkervaring": [
+      {
+        "aantalJarenWerkzaamInBeroep": 10
+      }
+    ],
+    "rijbewijs": [
+      {
+        "codeSoortRijbewijs": "B"
+      }
+    ],
+    "vervoermiddel": [
+      {
+        "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+        "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+        "codeVervoermiddel": 1
+      }
+    ],
+    "flexibiliteit": {
+      "codeRegiostraal": 3,
+      "indicatieOnregelmatigWerkOfPloegendienst": 1,
+      "datumAanvangBeschikbaarVoorWerk": "2021-12-22",
+      "datumEindeBeschikbaarVoorWerk": "2022-12-22"
+    },
+    "werktijden": {
+      "aantalWerkurenPerWeekMinimaal": 20,
+      "aantalWerkurenPerWeekMaximaal": 40,
+      "indicatieKantoortijden": 1
+    },
+    "cursus": [
+      {
+        "naamCursus": "BHV"
+      }
+    ],
+    "opleiding": [
+      {
+        "codeNiveauOpleiding": 4,
+        "indicatieDiploma": 1,
+        "opleidingsnaam": {
+          "codeOpleidingsnaam": 20036,
+          "omschrijvingOpleidingsnaam": "Sociologie"
+        }
+      },
+      {
+        "codeNiveauOpleiding": 2,
+        "indicatieDiploma": 1,
+        "opleidingsnaam": {
+          "naamOpleidingOngecodeerd": "Criminologie",
+          "omschrijvingOpleiding": "De studie van misdaad."
+        }
+      }
+    ],
+    "gedragscompetentie": [
+      {
+        "codeGedragscompetentie": 24101,
+        "omschrijvingGedragscompetentie": "Bewezen competentie in aansturen.",
+        "codeBeheersingGedragscompetentie": 1
+      },
+      {
+        "codeGedragscompetentie": 24102,
+        "omschrijvingGedragscompetentie": "Heeft ervaring met begeleiden.",
+        "codeBeheersingGedragscompetentie": 3
+      }
+    ],
+    "vakvaardigheid": [
+      {
+        "omschrijving": "Timmeren"
+      },
+      {
+        "omschrijving": "Stuken"
+      }
+    ],
+    "taalbeheersing": [
+      {
+        "codeTaal": "nld",
+        "codeNiveauTaalbeheersingMondeling": 2,
+        "codeNiveauTaalbeheersingSchriftelijk": 3,
+        "codeNiveauTaalbeheersingLezen": 4,
+        "codeNiveauTaalbeheersingLuisteren": 2
+      },
+      {
+        "codeTaal": "afr",
+        "codeNiveauTaalbeheersingMondeling": 3,
+        "codeNiveauTaalbeheersingSchriftelijk": 4,
+        "codeNiveauTaalbeheersingLezen": 4,
+        "codeNiveauTaalbeheersingLuisteren": 2
+      }
+    ]
+  }
+  ]

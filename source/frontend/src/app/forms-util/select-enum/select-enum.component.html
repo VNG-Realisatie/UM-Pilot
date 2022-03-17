@@ -1,0 +1,5 @@
+<div *ngIf="control">
+  <select class="form-control" [formControl]="control">
+    <option *ngFor="let item of values | keyvalue" [ngValue]="item.key"> {{item.value}}</option>
+  </select>
+</div>

@@ -1,0 +1,25 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-7">
+      <label>Code opleidingsnaam</label>
+      <input type="number" class="form-control" formControlName="codeOpleidingsnaam"
+             [ngClass]="(f.codeOpleidingsnaam.touched || f.codeOpleidingsnaam.dirty) && f.codeOpleidingsnaam.invalid ? 'is-invalid' : '' "
+      >
+      <div class="invalid-feedback">
+        Incorrecte code opleidingsnaam
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-12">
+      <label>Omschrijving opleiding</label>
+      <textarea type="text" class="form-control" formControlName="omschrijvingOpleidingsnaam"
+                [ngClass]="(f.omschrijvingOpleidingsnaam.touched || f.omschrijvingOpleidingsnaam.dirty) && f.omschrijvingOpleidingsnaam.invalid ? 'is-invalid' : '' "
+      ></textarea>
+      <div class="invalid-feedback">
+        Incorrecte omschrijving opleiding
+      </div>
+    </div>
+  </div>
+</div>

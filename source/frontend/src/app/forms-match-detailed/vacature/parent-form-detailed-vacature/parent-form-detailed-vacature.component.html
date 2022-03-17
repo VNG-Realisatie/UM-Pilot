@@ -1,0 +1,81 @@
+<form *ngIf="vacature; else loading">
+  <div class="row mb-3">
+    <div class="col-5 border-right">
+      <app-basic-information-match-detailed [data]="vacature"></app-basic-information-match-detailed>
+    </div>
+    <div class="col-5">
+      <app-arbeidsvoorwaarden-match-detailed [data]="vacature"></app-arbeidsvoorwaarden-match-detailed>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-flexibiliteit-match [data]="vacature"></app-flexibiliteit-match>
+    </div>
+    <div class="col-5">
+      <app-werktijden-match [data]="vacature"></app-werktijden-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-beroep-match [data]="vacature"></app-beroep-match>
+    </div>
+    <div class="col-5">
+      <app-sector-match [data]="vacature"></app-sector-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-contractvorm-match [data]="vacature"></app-contractvorm-match>
+    </div>
+    <div class="col-5">
+      <app-sollicitatiewijze-match-detailed [data]="vacature"></app-sollicitatiewijze-match-detailed>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-werkervaring-match [data]="vacature"></app-werkervaring-match>
+    </div>
+    <div class="col-5">
+      <app-vervoermiddel-match-detailed [data]="vacature"></app-vervoermiddel-match-detailed>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-cursus-match [data]="vacature"></app-cursus-match>
+    </div>
+    <div class="col-6">
+      <app-opleiding-detailed [data]="vacature"></app-opleiding-detailed>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-gedragscompetentie-match [data]="vacature"></app-gedragscompetentie-match>
+    </div>
+    <div class="col-5">
+      <app-vakvaardigheid-match [data]="vacature"></app-vakvaardigheid-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-taalbeheersing-match [data]="vacature"></app-taalbeheersing-match>
+    </div>
+    <div class="col-5">
+      <app-rijbewijs-match [data]="vacature"></app-rijbewijs-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-12">
+      <app-werkgever-match-detailed [data]="vacature"></app-werkgever-match-detailed>
+    </div>
+  </div>
+</form>
+
+<ng-template #loading>Loading...</ng-template>

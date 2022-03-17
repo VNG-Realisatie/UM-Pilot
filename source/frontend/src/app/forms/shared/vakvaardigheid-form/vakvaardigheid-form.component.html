@@ -1,0 +1,40 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-3">
+      <h3 class="mb">Vakvaardigheid</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1 "
+              (click)="addVakvaardigheid()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div formArrayName="vakvaardigheid" *ngFor="let vakvaardigheidControl of t.controls; let i=index">
+      <div [formGroupName]="i">
+
+        <div class="row mb-3">
+          <div class="col-8">
+
+            <label>Omschrijving vakvaardigheid</label>
+            <div class="input-group mb-3">
+              <textarea class="form-control" [formControl]='$any(vakvaardigheidControl).get("omschrijving")'
+                        [ngClass]='vakvaardigheidControl.get("omschrijving")?.touched &&
+                         vakvaardigheidControl.get("omschrijving")?.invalid ? "is-invalid" : "" '></textarea>
+
+              <button type="button" class="btn btn-outline-danger" (click)="removeVakvaardigheid(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+
+              <div class="invalid-feedback">
+                Kies een correcte omschrijving vakvaardigheid.
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

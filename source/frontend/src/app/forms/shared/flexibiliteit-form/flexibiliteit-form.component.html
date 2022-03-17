@@ -1,0 +1,40 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Flexibiliteit</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Code regiostraal</label>
+        <select-enum [control]='getControl("codeRegiostraal")'
+                     [values]="codeRegioStraalValues"></select-enum>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label>Indicatie onregelmatig werk of ploegendienst</label>
+        <select-enum [control]='getControl("indicatieOnregelmatigWerkOfPloegendienst")'
+                     [values]="indicatieThreeValues"></select-enum>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Datum aanvang beschikbaar voor werk</label>
+        <app-calendar-picker [control]="getControl('datumAanvangBeschikbaarVoorWerk')"></app-calendar-picker>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label>Datum einde beschikbaar voor werk</label>
+        <app-calendar-picker [control]="getControl('datumEindeBeschikbaarVoorWerk')"></app-calendar-picker>
+      </div>
+    </div>
+  </div>
+</div>
+
+

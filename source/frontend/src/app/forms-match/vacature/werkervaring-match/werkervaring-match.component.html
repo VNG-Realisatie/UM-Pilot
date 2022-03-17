@@ -1,0 +1,16 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb">Werkervaring</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-7">
+    <div *ngFor="let werkervaring of werkervaringen">
+      <label class="form-label">Aantal jaren werkervaring</label>
+      <div class="ml-3">
+        <p>{{werkervaring.aantalJarenWerkzaamInBeroep}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+    <h3 class="mb">Beroep</h3>
+    <label> Type beroepsnaam</label>
+    <select class="form-control" [(ngModel)]="codedValue" (ngModelChange)="onSelectedChange($event)"
+            [ngModelOptions]="{standalone: true}">
+      <option [ngValue]=0>Kies type beroepsnaam</option>
+      <option [ngValue]=1>Gecodeerd</option>
+      <option [ngValue]=2>Ongecodeerd</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div *ngIf='codedValue === 1'>
+      <app-beroepsnaam-gecodeerd-form (valueChange)="onValueChangeVacature($event)"
+                                      (formReady)="addForm($event)"></app-beroepsnaam-gecodeerd-form>
+    </div>
+    <div *ngIf='codedValue === 2'>
+      <app-beroepsnaam-ongecodeerd-form (valueChange)="onValueChangeVacature($event)"
+                                        (formReady)="addForm($event)"></app-beroepsnaam-ongecodeerd-form>
+    </div>
+  </div>
+</div>
+
+
+
+
+

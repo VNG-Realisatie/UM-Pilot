@@ -1,0 +1,67 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Algemene gegevens <small>(* is verplicht in te vullen)</small></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Kenmerk aanvraag *</label>
+        <input type="text" class="form-control" formControlName="aanvraagKenmerk"
+               [ngClass]="f.aanvraagKenmerk.touched && f.aanvraagKenmerk.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Vul een persoonlijke aanvraagkenmerk in.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Postcode *</label>
+        <input type="text" class="form-control" formControlName="postcode"
+               [ngClass]="f.postcode.touched && f.postcode.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Incorrecte postcode
+        </div>
+      </div>
+
+      <div>
+        <label>Indicatie LDR registratie</label>
+        <select-enum [control]="getControl('indicatieLdrRegistratie')" [values]="indicatieValues"></select-enum>
+      </div>
+
+
+      <div>
+        <label>Sluitingsdatum vacature</label>
+        <app-calendar-picker [control]="getControl('sluitingsDatumVacature')"></app-calendar-picker>
+      </div>
+
+
+    </div>
+    <div class="col-6">
+      <div>
+        <label>Straal *</label>
+        <input type="number" class="form-control" formControlName="straal"
+               [ngClass]="(f.straal.touched || f.straal.dirty) && f.straal.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Kies een straal tussen 0 en 999.
+        </div>
+      </div>
+      <div>
+        <label>Code werk en denkniveau minimaal</label>
+        <select-enum [control]="getControl('codeWerkEnDenkniveauMinimaal')"
+                     [values]="codeWerkEnDenkniveauMinimaalValues"></select-enum>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+

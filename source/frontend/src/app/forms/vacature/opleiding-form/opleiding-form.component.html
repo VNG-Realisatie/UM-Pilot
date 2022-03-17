@@ -1,0 +1,49 @@
+<div [formGroup]="form">
+  <div class="row mb-3">
+    <div class="col-3">
+      <h3 class="mb-2">Opleiding</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1 "
+              (click)="addOpleiding()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div formArrayName="opleiding" *ngFor="let opleidingControl of t.controls; let i=index">
+        <div [formGroupName]="i">
+          <div class="row">
+            <div class="col-4">
+              <label>Niveau Opleiding</label>
+              <div class="input-group">
+                <select-enum [control]='$any(opleidingControl.get("codeNiveauOpleiding"))'
+                             [values]="codeNiveauOpleidingValues"></select-enum>
+              </div>
+
+              <label>Diploma behaald</label>
+              <div class="input-group">
+                <select-enum [control]='$any(opleidingControl.get("indicatieDiploma"))'
+                             [values]="indicatieDiplomaValues"></select-enum>
+              </div>
+            </div>
+
+            <div class="col-7">
+              <app-opleidingsnaam-form
+                (formReady)="updateOpleidingsnaam($any(opleidingControl), $event)"></app-opleidingsnaam-form>
+            </div>
+
+            <div class="col-1 align-self-center">
+              <button type="button" class="btn btn-outline-danger" (click)="removeOpleiding(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

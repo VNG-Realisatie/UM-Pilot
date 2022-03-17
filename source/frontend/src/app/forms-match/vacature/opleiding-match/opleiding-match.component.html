@@ -1,0 +1,43 @@
+<div class="row mb-3">
+  <div class="col-3">
+    <h2 class="mb-2">Opleiding</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div *ngFor="let opleiding of opleidingen">
+      <div class="card bg-light mb-3 p-3">
+        <div class="row">
+          <div class="col-4">
+            <label class="form-label">Niveau Opleiding</label>
+            <div>
+              <div class="ml-3">
+                <p>{{opleiding.codeNiveauOpleiding}}</p>
+              </div>
+            </div>
+
+            <label class="form-label">Diploma behaald</label>
+            <div class="ml-3">
+              <p>{{opleiding.indicatieDiploma}}</p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div *ngIf='opleiding.type; else notCoded'>
+              <app-opleidingsnaam-gecodeerd-match
+                [data]="opleiding.opleidingsnaam"></app-opleidingsnaam-gecodeerd-match>
+            </div>
+            <ng-template #notCoded>
+              <app-mp-opleidingsnaam-ongecodeerd
+                [data]="opleiding.opleidingsnaam"></app-mp-opleidingsnaam-ongecodeerd>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

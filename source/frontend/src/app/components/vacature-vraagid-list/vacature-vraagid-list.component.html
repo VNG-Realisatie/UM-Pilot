@@ -1,0 +1,11 @@
+<h2>Bekijk vacatures per vraag ID</h2>
+
+<div class="grid-container">
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    [rowData]="aanvraagVacatures | async"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+  >
+  </ag-grid-angular>
+</div>

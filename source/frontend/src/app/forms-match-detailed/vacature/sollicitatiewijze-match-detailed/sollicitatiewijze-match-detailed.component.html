@@ -1,0 +1,30 @@
+<div class="row mb-4">
+  <div class="col-3">
+    <h2 class="mb-3">Sollicitatiewijze</h2>
+  </div>
+</div>
+<div *ngFor="let sollicitatiewijze of sollicitatiewijzen">
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <label class="form-label">Sollicitatiewijze</label>
+        <div class="ml-3">
+          <p>{{sollicitatiewijze.codeSollicitatiewijze}}</p>
+        </div>
+      </div>
+      <div>
+        <label class="form-label">Code webadres</label>
+        <div class="ml-3">
+          <p>{{sollicitatiewijze.webadres.codeWebadres}}</p>
+        </div>
+      </div>
+      <div>
+        <label class="form-label">URL</label>
+        <div class="ml-3">
+          <p>{{sollicitatiewijze.webadres.url}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

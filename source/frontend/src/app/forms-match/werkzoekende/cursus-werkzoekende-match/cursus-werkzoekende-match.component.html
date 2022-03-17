@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb-3">Cursus</h2>
+  </div>
+</div>
+
+<div *ngFor="let cursus of cursussen">
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label class="form-label">Naam Cursus</label>
+        <div class="ml-3">
+          <p>{{cursus.naamCursus}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label class="form-label">Datum Certificaat</label>
+        <div class="ml-3">
+          <p>{{cursus.datumCertificaat | date: 'dd-MM-yyyy' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

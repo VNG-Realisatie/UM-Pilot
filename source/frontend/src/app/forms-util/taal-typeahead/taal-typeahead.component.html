@@ -1,0 +1,14 @@
+<label> Code taal</label>
+
+<input
+  id="typeahead-focus"
+  type="text"
+  class="form-control app-trim-ignore"
+  [editable]='false'
+  (selectItem)='processTypeahead($event)'
+  [ngbTypeahead]="search"
+  (focus)="focus$.next($any($event).target.value)"
+  (click)="click$.next($any($event).target.value)"
+  #instance="ngbTypeahead"
+>
+

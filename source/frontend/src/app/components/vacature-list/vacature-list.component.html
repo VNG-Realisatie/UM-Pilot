@@ -1,0 +1,11 @@
+<h2>Bekijk geüploade vacatures</h2>
+
+<div class="grid-container">
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    [rowData]="vacatures | async"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+  >
+  </ag-grid-angular>
+</div>

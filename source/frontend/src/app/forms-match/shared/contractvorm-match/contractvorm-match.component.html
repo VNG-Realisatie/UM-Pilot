@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-3">
+    <h2 class="mb-2">Contractvorm</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div *ngFor="let contractvorm of contractvormen">
+      <div class="row align-items-center">
+        <div class="col-4">
+
+          <div>
+            <label class="form-label">Type arbeidscontract</label>
+            <div class="ml-3">
+              <p>{{contractvorm.codeTypeArbeidscontract}}</p>
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label">Type overeenkomst</label>
+            <div class="ml-3">
+              <p>{{contractvorm.codeTypeOvereenkomst}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

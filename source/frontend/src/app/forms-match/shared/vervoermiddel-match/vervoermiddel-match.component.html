@@ -1,0 +1,26 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb-2">Vervoermiddel</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div>
+      <div *ngFor="let vervoermiddel of vervoermiddelen;">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <label class="form-label">Vervoermiddel beschikbaar voor uitvoering werk</label>
+            <div class=" ml-3">
+              <p> {{vervoermiddel.indicatieBeschikbaarVoorUitvoeringWerk}}</p>
+            </div>
+            <label class="form-label">Vervoermiddel beschikbaar voor woon-werkverkeer</label>
+            <div class=" ml-3">
+              <p> {{vervoermiddel.indicatieBeschikbaarVoorWoonWerkverkeer}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

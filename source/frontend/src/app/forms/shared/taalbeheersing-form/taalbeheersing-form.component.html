@@ -1,0 +1,52 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-3">
+      <h3 class="mb">Taalbeheersing</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1 "
+              (click)="addTaalbeheersing()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div formArrayName="taalbeheersing" *ngFor="let taalbeheersingControl of t.controls; let i=index">
+      <div [formGroupName]="i">
+
+        <div class="row align-items-center mb-5">
+
+          <div class="col-4">
+            <app-taal-typeahead [control]='$any(taalbeheersingControl.get("codeTaal"))'></app-taal-typeahead>
+          </div>
+
+
+          <div class="col-4">
+            <label> Taalbeheersing mondeling</label>
+            <select-enum [control]='$any(taalbeheersingControl.get("codeNiveauTaalbeheersingMondeling"))'
+                         [values]="taalBeheersingValues"></select-enum>
+            <label> Taalbeheersing schriftelijk</label>
+            <select-enum [control]='$any(taalbeheersingControl.get("codeNiveauTaalbeheersingSchriftelijk"))'
+                         [values]="taalBeheersingValues"></select-enum>
+            <label> Taalbeheersing lezen</label>
+            <select-enum [control]='$any(taalbeheersingControl.get("codeNiveauTaalbeheersingLezen"))'
+                         [values]="taalBeheersingValues"></select-enum>
+            <label> Taalbeheersing luisteren</label>
+            <select-enum [control]='$any(taalbeheersingControl.get("codeNiveauTaalbeheersingLuisteren"))'
+                         [values]="taalBeheersingValues"></select-enum>
+
+          </div>
+
+          <div class="col-2">
+            <button type="button" class="btn btn-outline-danger" (click)="removeTaalbeheersing(i)">
+              <remove-item-svg></remove-item-svg>
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

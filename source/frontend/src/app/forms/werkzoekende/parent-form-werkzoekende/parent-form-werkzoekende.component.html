@@ -1,0 +1,87 @@
+<form class="needs-validation" [formGroup]="form" novalidate>
+  <div class="row mb-3">
+    <div class="col-5 border-right">
+      <app-basic-information-werkzoekende
+        (valueChangesPostcodeAndStraal)="onValueChangeRequestInfo($event)"
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormGroup('basic', $event)"></app-basic-information-werkzoekende>
+    </div>
+    <div class="col-5">
+      <app-werktijden-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormGroup('werktijden', $event)">
+      </app-werktijden-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-flexibiliteit-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormGroup('flexibiliteit', $event)"></app-flexibiliteit-form>
+
+    </div>
+    <div class="col-5">
+      <app-mobiliteit-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormGroup('mobiliteit', $event)">
+      </app-mobiliteit-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-12">
+      <app-arbeidsmarktkwalificatie-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormGroup('arbeidsmarktkwalificatie', $event)"></app-arbeidsmarktkwalificatie-form>
+    </div>
+  </div>
+
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-vervoermiddel-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('vervoermiddel', $event)"></app-vervoermiddel-form>
+
+    </div>
+    <div class="col-5">
+      <app-voorkeursland-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('voorkeursland', $event)"></app-voorkeursland-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-contractvorm-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('contractvorm', $event)"></app-contractvorm-form>
+    </div>
+    <div class="col-5">
+      <app-sector-werkzoekende-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('sector', $event)">
+      </app-sector-werkzoekende-form>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5">
+      <app-bemiddelingsberoep-werkzoekende-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('bemiddelingsberoep', $event)"></app-bemiddelingsberoep-werkzoekende-form>
+    </div>
+
+  </div>
+
+
+  <button class="btn btn-secondary mb-3 mr-3" type="submit" [disabled]="submitted || form.invalid" (click)="onSubmit()">
+    Dien
+    verzoek in
+  </button>
+
+  <div *ngIf="submitted" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</form>

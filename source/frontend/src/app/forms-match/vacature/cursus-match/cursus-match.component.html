@@ -1,0 +1,18 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb-2">Cursus</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8">
+    <div>
+      <div *ngFor="let cursus of cursussen">
+        <label class="form-label">Naam cursus</label>
+        <div class="ml-3">
+          <p>{{cursus.naamCursus}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

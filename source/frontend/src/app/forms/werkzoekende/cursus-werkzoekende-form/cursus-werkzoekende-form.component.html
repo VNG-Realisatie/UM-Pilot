@@ -1,0 +1,46 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-3">
+      <h3 class="mb-2">Cursus</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1"
+              (click)="addCursus()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div>
+        <div formArrayName="cursus" *ngFor="let cursusControl of t.controls; let i=index">
+          <div [formGroupName]="i">
+            <label>Naam cursus</label>
+            <div class="input-group">
+              <textarea class="form-control" formControlName="naamCursus"
+                        [ngClass]="cursusControl.get('naamCursus')?.touched && cursusControl.get('naamCursus')?.invalid ? 'is-invalid' : '' "
+              ></textarea>
+              <button type="button" class="btn btn-outline-danger" (click)="removeCursus(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+
+              <div class="invalid-feedback">
+                Incorrecte naam cursus
+              </div>
+            </div>
+
+
+            <div>
+              <label>Datum behalen certificaat</label>
+              <app-calendar-picker [control]="$any(cursusControl).get('datumCertificaat')"></app-calendar-picker>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

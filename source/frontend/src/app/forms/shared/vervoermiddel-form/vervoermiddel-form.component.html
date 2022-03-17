@@ -1,0 +1,49 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-3">
+      <h3 class="mb-2">Vervoermiddel</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1"
+              (click)="addVervoermiddel()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <div formArrayName="vervoermiddel" *ngFor="let vervoermiddelControl of t.controls; let i=index">
+          <div [formGroupName]="i">
+
+
+            <div class="row align-items-center">
+
+              <div class="col-8">
+                <label>Vervoermiddel beschikbaar voor uitvoering werk</label>
+                <div class="input-group">
+                  <select-enum [control]='$any(vervoermiddelControl.get("indicatieBeschikbaarVoorUitvoeringWerk"))'
+                               [values]="indicatieThreeValues"></select-enum>
+                </div>
+
+                <label>Vervoermiddel beschikbaar voor woon-werkverkeer</label>
+                <div class="input-group">
+                  <select-enum [control]='$any(vervoermiddelControl.get("indicatieBeschikbaarVoorWoonWerkverkeer"))'
+                               [values]="indicatieThreeValues"></select-enum>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <button type="button" class="btn btn-outline-danger" (click)="removeVervoermiddel(i)">
+                  <remove-item-svg></remove-item-svg>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

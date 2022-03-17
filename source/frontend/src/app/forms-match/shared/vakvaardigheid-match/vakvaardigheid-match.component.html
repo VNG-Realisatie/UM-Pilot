@@ -1,0 +1,18 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb">Vakvaardigheid</h2>
+  </div>
+</div>
+<div>
+  <div *ngFor="let vakvaardigheid of vakvaardigheiden">
+    <div class="row mb-3">
+      <div class="col-8">
+        <label class="form-label">Omschrijving vakvaardigheid</label>
+        <div class="mb-3 ml-3">
+          <p> {{vakvaardigheid.omschrijving}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

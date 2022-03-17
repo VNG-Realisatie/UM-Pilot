@@ -1,0 +1,4 @@
+<div class="input-group" *ngIf="control">
+  <input ngbDatepicker #d="ngbDatepicker" class="form-control app-trim-ignore" [formControl]="control">
+  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+</div>

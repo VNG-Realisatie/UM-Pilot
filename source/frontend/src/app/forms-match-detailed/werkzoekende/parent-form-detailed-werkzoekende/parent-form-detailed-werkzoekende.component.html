@@ -1,0 +1,65 @@
+<div *ngIf="werkzoekende; else loading">
+  <div class="row mb-3">
+    <div class="col-5 border-right">
+      <app-basic-information-werkzoekende-detailed [data]="werkzoekende"></app-basic-information-werkzoekende-detailed>
+    </div>
+    <div class="col-5">
+      <app-werktijden-match [data]="werkzoekende"></app-werktijden-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-flexibiliteit-match [data]="werkzoekende"></app-flexibiliteit-match>
+    </div>
+    <div class="col-5">
+      <app-mobiliteit-werkzoekende-match [data]="werkzoekende"></app-mobiliteit-werkzoekende-match>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-12 ">
+      <app-arbeidsmarktkwalificatie-detailed [data]="werkzoekende"></app-arbeidsmarktkwalificatie-detailed>
+    </div>
+  </div>
+
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-vervoermiddel-match-detailed [data]="werkzoekende"></app-vervoermiddel-match-detailed>
+    </div>
+    <div class="col-5">
+      <app-voorkeursland-match [data]="werkzoekende"></app-voorkeursland-match>
+    </div>
+  </div>
+
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-contractvorm-match [data]="werkzoekende"></app-contractvorm-match>
+    </div>
+    <div class="col-5">
+      <app-sector-match-detailed [data]="werkzoekende"></app-sector-match-detailed>
+    </div>
+  </div>
+
+
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-bemiddelingsberoep-match [data]="werkzoekende"></app-bemiddelingsberoep-match>
+    </div>
+    <div class="col-5">
+      <app-eis-aan-werk-detailed [data]="werkzoekende"></app-eis-aan-werk-detailed>
+    </div>
+  </div>
+
+  <div class="row border-top mb-3">
+    <div class="col-12">
+      <app-contactgegevens-werkzoekende-detailed
+        [data]="werkzoekende"></app-contactgegevens-werkzoekende-detailed>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #loading>Loading...</ng-template>

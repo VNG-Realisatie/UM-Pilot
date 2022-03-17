@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-3">
+    <h2 class="mb-3">Contactpersoon</h2>
+  </div>
+</div>
+<div *ngFor="let contactpersoon of contactpersonen">
+  <div class="row">
+    <div class="col-3">
+      <label class="form-label">Naam contactpersoon</label>
+      <div class="ml-3">
+        <p>{{contactpersoon.naamContactpersoonAfdeling}}</p>
+      </div>
+    </div>
+    <div class="col-3">
+      <app-telefoon-match-detailed
+        [data]="contactpersoon.telefoonnummer"></app-telefoon-match-detailed>
+    </div>
+    <div class="col-3">
+      <app-email-match-detailed
+        [data]="contactpersoon.emailadres"></app-email-match-detailed>
+    </div>
+  </div>
+</div>
+
+
+

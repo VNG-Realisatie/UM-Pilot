@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Avenir, Arial, sans-serif;
+}
+
+.btn-prim {
+  color: #ffffff;
+  background-color: #00A9F3;
+  border-color: #00A9F3;
+}
+
+.btn-prim:hover,
+.btn-prim:focus,
+.btn-prim:active,
+.btn-prim.active,
+.open .dropdown-toggle.btn-prim {
+  color: #ffffff;
+  background-color: #179DD6;
+  border-color: #00A9F3;
+}
+
+.btn-prim:active,
+.btn-prim.active,
+.open .dropdown-toggle.btn-prim {
+  background-image: none;
+}
+
+.btn-prim.disabled,
+.btn-prim[disabled],
+fieldset[disabled] .btn-prim,
+.btn-prim.disabled:hover,
+.btn-prim[disabled]:hover,
+fieldset[disabled] .btn-prim:hover,
+.btn-prim.disabled:focus,
+.btn-prim[disabled]:focus,
+fieldset[disabled] .btn-prim:focus,
+.btn-prim.disabled:active,
+.btn-prim[disabled]:active,
+fieldset[disabled] .btn-prim:active,
+.btn-prim.disabled.active,
+.btn-prim[disabled].active,
+fieldset[disabled] .btn-prim.active {
+  background-color: #00A9F3;
+  border-color: #00A9F3;
+}
+
+.btn-prim .badge {
+  color: #00A9F3;
+  background-color: #ffffff;
+}
+
+.form-label {
+  font-size: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+

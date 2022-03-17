@@ -1,0 +1,55 @@
+<div [formGroup]="form">
+  <div class="row mb-3">
+    <div class="col-5 border-right">
+      <div>
+        <label>Code werk en denk niveau werkzoekende</label>
+        <select-enum [control]="getControl('codeWerkEnDenkniveauWerkzoekende')"
+                     [values]="codeWerkEnDenkniveauValues"></select-enum>
+      </div>
+    </div>
+    <div class="col-5">
+      <app-vakvaardigheid-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('vakvaardigheid', $event)"></app-vakvaardigheid-form>
+    </div>
+  </div>
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-gedragscompetentie-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('gedragscompetentie', $event)"></app-gedragscompetentie-form>
+    </div>
+    <div class="col-5">
+      <app-rijbewijs-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('rijbewijs', $event)">
+      </app-rijbewijs-form>
+    </div>
+  </div>
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-cursus-werkzoekende-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('cursus', $event)"></app-cursus-werkzoekende-form>
+    </div>
+    <div class="col-5">
+      <app-opleiding-werkzoekende-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('opleiding', $event)"></app-opleiding-werkzoekende-form>
+    </div>
+  </div>
+  <div class="row border-top mb-3">
+    <div class="col-5 border-right">
+      <app-taalbeheersing-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('taalbeheersing', $event)">
+      </app-taalbeheersing-form>
+    </div>
+    <div class="col-5">
+      <app-werkervaring-werkzoekende-form
+        (valueChangeWerkzoekende)="onValueChange($event)"
+        (formReady)="addChildFormArray('werkervaring', $event)">
+      </app-werkervaring-werkzoekende-form>
+    </div>
+  </div>
+</div>

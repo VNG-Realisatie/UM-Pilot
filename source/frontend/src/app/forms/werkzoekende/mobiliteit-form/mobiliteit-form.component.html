@@ -1,0 +1,43 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Mobiliteit</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <label>Bemiddelingspostcode</label>
+      <input type="text" class="form-control" formControlName="bemiddelingspostcode"
+             [ngClass]="f.bemiddelingspostcode.touched && f.bemiddelingspostcode.invalid ? 'is-invalid' : '' "
+      >
+      <div class="invalid-feedback">
+        Incorrecte postcode
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Maximale reisafstand (km)</label>
+        <input type="number" class="form-control" formControlName="maximaleReisafstand"
+               [ngClass]="(f.maximaleReisafstand.touched || f.maximaleReisafstand.dirty) && f.maximaleReisafstand.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Kies een reisafstand tussen 0 en 999.
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label>Maximale reistijd (min)</label>
+        <input type="number" class="form-control" formControlName="maximaleReistijd"
+               [ngClass]="(f.maximaleReistijd.touched || f.maximaleReistijd.dirty) && f.maximaleReistijd.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Kies een reistijd tussen 0 en 999.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

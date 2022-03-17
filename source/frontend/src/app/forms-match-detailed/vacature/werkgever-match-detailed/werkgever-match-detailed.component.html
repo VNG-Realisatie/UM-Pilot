@@ -1,0 +1,48 @@
+<div class="row mb-3">
+  <div class="col-3">
+    <h2 class="mb-3">Werkgever</h2>
+  </div>
+</div>
+
+
+<div class="row mb-3">
+  <div class="col-3">
+    <div>
+      <label class="form-label">Handelsnaam organisatie</label>
+      <div class="ml-3">
+        <p>{{handelsnaamOrganisatie}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-3">
+    <div>
+      <app-webadres-match-detailed [data]="werkgever"></app-webadres-match-detailed>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-11">
+    <div>
+      <app-adreshouding-match-detailed [data]="data"></app-adreshouding-match-detailed>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <app-contactpersoon-match-detailed [data]="data"></app-contactpersoon-match-detailed>
+  </div>
+  <div class="col-6">
+    <app-sector-match-detailed [data]="werkgever"></app-sector-match-detailed>
+  </div>
+</div>
+
+
+
+
+
+
+

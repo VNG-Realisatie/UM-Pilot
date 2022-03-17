@@ -1,0 +1,29 @@
+<h2>Werkzoekenden voor gekozen vraag ID</h2>
+
+<div class="row">
+  <div class="col-12">
+    <div class="grid-container">
+      <ag-grid-angular
+        class="ag-theme-alpine"
+        [rowData]="(aanvraagWerkzoekende$ | async)?.werkzoekenden"
+        [immutableData]="true"
+        [columnDefs]="columnDefs"
+        [gridOptions]="gridOptions"
+      >
+      </ag-grid-angular>
+    </div>
+  </div>
+</div>
+<div class="row mt-3 mb-3">
+  <div class="col-12">
+    <button type="button" class="btn btn-secondary mr-3" (click)="refresh()">
+      <app-refresh-svg></app-refresh-svg>
+      Ververs
+    </button>
+
+    <button type="button" class="btn btn-secondary" (click)="goBack()">
+      <app-go-back-svg></app-go-back-svg>
+      Ga terug
+    </button>
+  </div>
+</div>

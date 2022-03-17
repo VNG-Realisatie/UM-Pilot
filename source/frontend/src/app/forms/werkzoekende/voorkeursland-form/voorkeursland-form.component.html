@@ -1,0 +1,31 @@
+<div [formGroup]="form">
+  <div class="row mb-4">
+    <div class="col-3">
+      <h3 class="mb-3">Voorkeursland</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary float-right btn-sm mt-1"
+              (click)="addVoorkeursland()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <div>
+        <div formArrayName="voorkeursland" *ngFor="let voorkeurslandControl of t.controls; let i=index">
+          <div [formGroupName]="i">
+            <label>Naam voorkeursland</label>
+            <div class="input-group">
+              <select-enum [control]='$any(voorkeurslandControl.get("landencodeIso"))'
+                           [values]="countryValues"></select-enum>
+              <button type="button" class="btn btn-outline-danger" (click)="removeVoorkeursland(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

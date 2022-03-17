@@ -1,0 +1,21 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="mb">Sector</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Code SBI</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="codeSbi"
+                 [ngClass]="(f.codeSbi.touched || f.codeSbi.dirty) && f.codeSbi.invalid ? 'is-invalid' : '' ">
+          <div class="invalid-feedback">
+            Kies een correcte code SBI
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

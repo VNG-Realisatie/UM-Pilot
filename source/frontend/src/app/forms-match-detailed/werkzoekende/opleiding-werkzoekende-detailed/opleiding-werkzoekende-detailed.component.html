@@ -1,0 +1,76 @@
+<div class="row mb-3">
+  <div class="col-3">
+    <h2 class="mb-2">Opleiding</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div *ngFor="let opleiding of opleidingen">
+      <div class="card bg-light mb-3 p-3">
+        <div class="row">
+          <div class="col-12">
+            <div *ngIf='opleiding.type; else notCoded'>
+              <app-opleidingsnaam-gecodeerd-match
+                [data]='opleiding.opleidingsnaam'></app-opleidingsnaam-gecodeerd-match>
+            </div>
+            <ng-template #notCoded>
+              <app-opleidingsnaam-ongecodeerd-match
+                [data]='opleiding.opleidingsnaam'></app-opleidingsnaam-ongecodeerd-match>
+            </ng-template>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+
+            <label class="form-label">Niveau Opleiding</label>
+            <div class="ml-3">
+              <p>{{opleiding.codeNiveauOpleiding}}</p>
+            </div>
+            <label class="form-label">Diploma behaald</label>
+            <div class="ml-3">
+              <p>{{opleiding.indicatieDiploma}}</p>
+            </div>
+            <label class="form-label">Datum diploma</label>
+            <div class="ml-3">
+              <p>{{opleiding.datumDiploma | date:  'dd-MM-yyyy'}}</p>
+            </div>
+          </div>
+
+
+          <div class="col-6">
+
+            <label class="form-label">Datum aanvang volgen opleiding</label>
+            <div>
+              <div class="ml-3">
+                <p>{{opleiding.datumAanvangVolgenOpleiding | date:  'dd-MM-yyyy'}}</p>
+              </div>
+            </div>
+            <label class="form-label">Datum einde volgen opleiding</label>
+            <div class="ml-3">
+              <p>{{opleiding.datumEindeVolgenOpleiding | date:  'dd-MM-yyyy'}}</p>
+            </div>
+            <label class="form-label">Code status opleiding</label>
+            <div class="ml-3">
+              <p>{{opleiding.codeStatusOpleiding}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">Naam opleidingsinstituut</label>
+            <div class="ml-3">
+              <p>{{opleiding.naamOpleidingsinstituut}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

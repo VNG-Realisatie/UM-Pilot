@@ -1,0 +1,34 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-3">
+      <h3 class="mb">Werkervaring</h3>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-outline-secondary btn-sm float-right mt-1 "
+              (click)="addWerkervaring()">
+        <add-item-svg></add-item-svg>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-7">
+      <div>
+        <div formArrayName="werkervaring" *ngFor="let werkervaringControl of t.controls; let i=index">
+          <div [formGroupName]="i">
+            <label>Aantal jaren werkervaring</label>
+            <div class="input-group">
+              <input type="number" class="form-control" formControlName="aantalJarenWerkzaamInBeroep"
+                     [ngClass]='(werkervaringControl.touched || werkervaringControl.dirty) && werkervaringControl.invalid ? "is-invalid" : "" '>
+              <button type="button" class="btn btn-outline-danger" (click)="removeWerkervaring(i)">
+                <remove-item-svg></remove-item-svg>
+              </button>
+              <div class="invalid-feedback">
+                Kies een correcte aantal jaren werkervaring
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

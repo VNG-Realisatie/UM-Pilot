@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+  <div class="row mb-2">
+    <div class="col-6">
+      <label>Naam opleiding</label>
+      <textarea class="form-control" formControlName="naamOpleidingOngecodeerd"
+                [ngClass]="f.naamOpleidingOngecodeerd.touched && f.naamOpleidingOngecodeerd.invalid ? 'is-invalid' : '' "
+      ></textarea>
+      <div class="invalid-feedback">
+        Incorrecte naam opleiding
+      </div>
+    </div>
+  </div>
+</div>

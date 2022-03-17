@@ -1,0 +1,24 @@
+<h2>Importeer vacatures</h2>
+
+<div class="card">
+  <div class="card-body">
+    <label>Upload vacatures voor gemeente {{selectedGemeente}}:</label>
+    <div class="file-input">
+      <label>File</label>
+      <button class="btn btn-secondary btn-sm" (click)="fileInput.click()">
+        {{ file ? file.name : 'Select' }}
+      </button>
+      <input hidden type="file" #fileInput (change)="onFileInput(fileInput.files)"/>
+    </div>
+    <div>
+      <button class="btn btn-secondary btn-sm" [disabled]="!file || !selectedGemeente" type="submit"
+              (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+    <mat-progress-bar *ngIf="upload$ | async as download"
+                      [mode]="download.state == 'PENDING' ? 'buffer' : 'determinate'" [value]="download.progress">
+    </mat-progress-bar>
+  </div>
+</div>
+

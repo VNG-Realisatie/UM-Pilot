@@ -1,0 +1,40 @@
+<div class="row mb-2">
+  <div class="col-3">
+    <h2 class="mb">Gedragscompetentie</h2>
+  </div>
+</div>
+
+<div>
+  <div *ngFor="let gedrag of gedragscompetenties">
+    <div class="row align-items-center mb-5">
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label">Code gedragscompetentie</label>
+            <div class="ml-3">
+              <p>{{gedrag.codeGedragscompetentie}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label"> Beheersing gedragscompetentie</label>
+            <div class="ml-3">
+              <p>{{gedrag.codeBeheersingGedragscompetentie}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label">Omschrijving gedragscompetentie</label>
+            <div class="ml-3">
+              <p>{{gedrag.omschrijvingGedragscompetentie}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

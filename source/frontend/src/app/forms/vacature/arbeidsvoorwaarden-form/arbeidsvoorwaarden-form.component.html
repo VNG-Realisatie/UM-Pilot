@@ -1,0 +1,30 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Arbeidsvoorwaarden</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Datum aanvang werkzaamheden</label>
+        <app-calendar-picker [control]="getControl('datumAanvangWerkzaamheden')"></app-calendar-picker>
+      </div>
+      <div>
+        <label>Datum einde werkzaamheden</label>
+        <app-calendar-picker [control]="getControl('datumEindeWerkzaamheden')"></app-calendar-picker>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label>Salaris indicatie</label>
+        <input type="text" class="form-control" formControlName="salarisIndicatie"
+               [ngClass]="f.salarisIndicatie.touched && f.salarisIndicatie.invalid ? 'is-invalid' : '' "
+        >
+        <div class="invalid-feedback">
+          Incorrecte salarisIndicatie
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

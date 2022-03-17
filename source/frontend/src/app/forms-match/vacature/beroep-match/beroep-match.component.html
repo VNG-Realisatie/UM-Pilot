@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb">Beroep</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div *ngIf="codedOrNot; else notCoded">
+      <app-beroepsnaam-gecodeerd-match [data]='beroepsnaam'></app-beroepsnaam-gecodeerd-match>
+    </div>
+    <ng-template #notCoded>
+      <app-beroepsnaam-ongecodeerd-match [data]='beroepsnaam'></app-beroepsnaam-ongecodeerd-match>
+
+    </ng-template>
+
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+<div class="row mb-3">
+  <div class="col-3">
+    <h2 class="mb-2">Werkervaring</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div *ngFor="let werkervaring of werkervaringen">
+      <div class="card bg-light mb-3 p-3">
+        <div class="row">
+          <div class="col-4">
+            <label class="form-label">Datum aanvang werkzaamheden</label>
+            <div class="ml-3">
+              <p>{{werkervaring.datumAanvangWerkzaamheden| date:  'dd-MM-yyyy'}}</p>
+            </div>
+
+            <label class="form-label">Datum einde werkzaamheden</label>
+            <div class="ml-3">
+              <p>{{werkervaring.datumEindeWerkzaamheden| date:  'dd-MM-yyyy'}}</p>
+            </div>
+
+            <label class="form-label">Naam organisatie</label>
+            <div class="ml-3">
+              <p>{{werkervaring.naamOrganisatie}}</p>
+            </div>
+          </div>
+
+          <div class="col-7">
+            <div *ngIf='werkervaring.type; else notCoded'>
+              <app-beroepsnaam-gecodeerd-match
+                [data]='werkervaring.beroep'></app-beroepsnaam-gecodeerd-match>
+            </div>
+            <ng-template #notCoded>
+              <app-beroepsnaam-ongecodeerd-match
+                [data]='werkervaring.beroep'></app-beroepsnaam-ongecodeerd-match>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
