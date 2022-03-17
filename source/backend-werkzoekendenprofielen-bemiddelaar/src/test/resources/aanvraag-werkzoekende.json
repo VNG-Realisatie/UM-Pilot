@@ -1,0 +1,116 @@
+{
+  "vraagId": "string123",
+  "werkzoekenden": [
+    {
+      "vumID": "string",
+      "indicatieLdrRegistratie": 1,
+      "indicatieBeschikbaarheidContactgegevens": 1,
+      "voorkeursland": [
+        {
+          "landencodeIso": "ST"
+        }
+      ],
+      "vervoermiddel": [
+        {
+          "indicatieBeschikbaarVoorUitvoeringWerk": 1,
+          "indicatieBeschikbaarVoorWoonWerkverkeer": 1
+        }
+      ],
+      "mobiliteit": {
+        "bemiddelingspostcode": "4600AA",
+        "maximaleReisafstand": 999,
+        "maximaleReistijd": 999
+      },
+      "flexibiliteit": {
+        "codeRegiostraal": 9,
+        "indicatieOnregelmatigWerkOfPloegendienst": 1,
+        "datumAanvangBeschikbaarVoorWerk": "2022-01-06",
+        "datumEindeBeschikbaarVoorWerk": "2022-01-06"
+      },
+      "werktijden": {
+        "aantalWerkurenPerWeekMinimaal": 99,
+        "aantalWerkurenPerWeekMaximaal": 99,
+        "indicatieKantoortijden": 1
+      },
+      "contractvorm": [
+        {
+          "codeTypeArbeidscontract": "B",
+          "codeTypeOvereenkomst": "01"
+        }
+      ],
+      "arbeidsmarktkwalificatie": {
+        "codeWerkEnDenkniveauWerkzoekende": 7,
+        "vakvaardigheid": [
+          {
+            "omschrijving": "string"
+          }
+        ],
+        "taalbeheersing": [
+          {
+            "codeTaal": "str",
+            "codeNiveauTaalbeheersingMondeling": 4,
+            "codeNiveauTaalbeheersingSchriftelijk": 4,
+            "codeNiveauTaalbeheersingLezen": 4,
+            "codeNiveauTaalbeheersingLuisteren": 4
+          }
+        ],
+        "gedragscompetentie": [
+          {
+            "codeGedragscompetentie": 24100,
+            "omschrijvingGedragscompetentie": "string",
+            "codeBeheersingGedragscompetentie": 9
+          }
+        ],
+        "rijbewijs": [
+          {
+            "codeSoortRijbewijs": "B"
+          }
+        ],
+        "cursus": [
+          {
+            "naamCursus": "string",
+            "datumCertificaat": "2022-01-06"
+          }
+        ],
+        "opleiding": [
+          {
+            "codeNiveauOpleiding": 9,
+            "indicatieDiploma": 0,
+            "datumDiploma": "2022-01-06",
+            "opleidingsnaam": {
+              "codeOpleidingsnaam": 0,
+              "omschrijvingOpleidingsnaam": "string"
+            }
+          }
+        ],
+        "werkervaring": [
+          {
+            "datumAanvangWerkzaamheden": "2022-01-06",
+            "datumEindeWerkzaamheden": "2022-01-06",
+            "naamOrganisatie": "string",
+            "beroep": {
+              "codeBeroepsnaam": "string",
+              "omschrijvingBeroepsnaam": "string"
+            }
+          }
+        ]
+      },
+      "sector": [
+        {
+          "codeSbi": 0
+        }
+      ],
+      "bemiddelingsberoep": [
+        {
+          "codeBeroepsnaam": "string",
+          "omschrijvingBeroepsnaam": "string"
+        },
+        {
+          "naamBeroepOngecodeerd": "string"
+        }
+      ]
+    }
+  ],
+  "timesAccessLeft": 10,
+  "creatieDatum": "2022-01-07"
+}

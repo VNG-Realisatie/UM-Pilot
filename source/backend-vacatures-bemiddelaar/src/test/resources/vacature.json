@@ -1,0 +1,158 @@
+{
+  "idVacature": "string",
+  "naamVacature": "string",
+  "nummerVacature": "string",
+  "omschrijvingVacature": "string",
+  "codeWerkEnDenkniveauMinimaal": "s",
+  "indicatieLdrRegistratie": 0,
+  "sluitingsDatumVacature": "2021-12-22",
+  "sollicitatiewijze": [
+    {
+      "codeSollicitatiewijze": "s",
+      "webadres": {
+        "codeWebadres": 99,
+        "url": "string"
+      }
+    }
+  ],
+  "werkgever": {
+    "handelsnaamOrganisatie": "string",
+    "webadres": [
+      {
+        "codeWebadres": 99,
+        "url": "string"
+      }
+    ],
+    "adresHouding": [
+      {
+        "codeFunctieAdres": "s",
+        "datumAanvangAdres": "2021-12-22",
+        "datumEindeAdres": "2021-12-22",
+        "adres": {
+          "adresNederland": {
+            "codeGemeente": "stri",
+            "district": "string",
+            "gemeentedeel": "string",
+            "gemeentenaam": "string",
+            "identificatiecodeNummeraanduiding": "string",
+            "identificatiecodeVerblijfplaats": "string",
+            "locatieomschrijving": "string",
+            "postcode": "string",
+            "woonplaatsnaam": "string",
+            "adresDetails": {
+              "straatadres": {
+                "aanduidingBijHuisnummer": "st",
+                "huisletter": "s",
+                "huisnummer": 0,
+                "huisnummertoevoeging": "string",
+                "naamOpenbareRuimte": "string",
+                "straatnaam": "string",
+                "woonbootverwijzing": "st",
+                "woonwagenverwijzing": "st"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "contactpersoon": [
+      {
+        "naamContactpersoonAfdeling": "string",
+        "telefoonnummer": [
+          "string"
+        ],
+        "emailadres": [
+          "string"
+        ]
+      }
+    ],
+    "sector": [
+      {
+        "codeSbi": 0
+      }
+    ]
+  },
+  "sector": {
+    "codeSbi": 0
+  },
+  "arbeidsVoorwaarden": {
+    "datumAanvangWerkzaamheden": "2021-12-22",
+    "datumEindeWerkzaamheden": "2021-12-22",
+    "omschrijvingArbeidsvoorwaarden": "string",
+    "salarisIndicatie": "string"
+  },
+  "contractvorm": [
+    {
+      "codeTypeArbeidscontract": "s",
+      "codeTypeOvereenkomst": "st"
+    }
+  ],
+  "beroep": {
+    "codeBeroepsnaam": "string",
+    "omschrijvingBeroepsnaam": "string"
+  },
+  "werkervaring": [
+    {
+      "aantalJarenWerkzaamInBeroep": 99
+    }
+  ],
+  "rijbewijs": [
+    {
+      "codeSoortRijbewijs": "str"
+    }
+  ],
+  "vervoermiddel": [
+    {
+      "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+      "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+      "codeVervoermiddel": 99
+    }
+  ],
+  "flexibiliteit": {
+    "codeRegiostraal": 9,
+    "indicatieOnregelmatigWerkOfPloegendienst": 0,
+    "datumAanvangBeschikbaarVoorWerk": "2021-12-22",
+    "datumEindeBeschikbaarVoorWerk": "2021-12-22"
+  },
+  "werktijden": {
+    "aantalWerkurenPerWeekMinimaal": 99,
+    "aantalWerkurenPerWeekMaximaal": 99,
+    "indicatieKantoortijden": 0
+  },
+  "cursus": [
+    {
+      "naamCursus": "string"
+    }
+  ],
+  "opleiding": [
+    {
+      "codeNiveauOpleiding": 9,
+      "indicatieDiploma": 0,
+      "opleidingsnaam": {
+        "codeOpleidingsnaam": 0,
+        "omschrijvingOpleidingsnaam": "string"
+      }
+    }
+  ],
+  "gedragscompetentie": [
+    {
+      "codeGedragscompetentie": 0,
+      "omschrijvingGedragscompetentie": "string",
+      "codeBeheersingGedragscompetentie": 9
+    }
+  ],
+  "vakvaardigheid": [
+    {
+      "omschrijving": "string"
+    }
+  ],
+  "taalbeheersing": [
+    {
+      "codeTaal": "str",
+      "codeNiveauTaalbeheersingMondeling": 9,
+      "codeNiveauTaalbeheersingSchriftelijk": 9,
+      "codeNiveauTaalbeheersingLezen": 9,
+      "codeNiveauTaalbeheersingLuisteren": 9
+    }
+  ]
+}

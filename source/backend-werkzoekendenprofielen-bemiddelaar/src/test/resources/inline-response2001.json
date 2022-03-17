@@ -1,0 +1,151 @@
+{
+  "bronID": "string",
+  "werkzoekende": {
+    "idWerkzoekende": "string",
+    "indicatieLdrRegistratie": 0,
+    "indicatieBeschikbaarheidContactgegevens": 0,
+    "persoonlijkePresentatie": "string",
+    "voorkeursland": [
+      {
+        "landencodeIso": "st"
+      }
+    ],
+    "eisAanWerk": {
+      "indicatieAanpassingWerkomgeving": 0,
+      "indicatieBegeleiding": 0,
+      "indicatieWerkvariatie": 0
+    },
+    "vervoermiddel": [
+      {
+        "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+        "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+        "codeVervoermiddel": 99
+      }
+    ],
+    "mobiliteit": {
+      "bemiddelingspostcode": "string",
+      "maximaleReisafstand": 999,
+      "maximaleReistijd": 999
+    },
+    "flexibiliteit": {
+      "codeRegiostraal": 9,
+      "indicatieOnregelmatigWerkOfPloegendienst": 0,
+      "datumAanvangBeschikbaarVoorWerk": "2022-01-07",
+      "datumEindeBeschikbaarVoorWerk": "2022-01-07"
+    },
+    "werktijden": {
+      "aantalWerkurenPerWeekMinimaal": 99,
+      "aantalWerkurenPerWeekMaximaal": 99,
+      "indicatieKantoortijden": 0
+    },
+    "contractvorm": [
+      {
+        "codeTypeArbeidscontract": "s",
+        "codeTypeOvereenkomst": "st"
+      }
+    ],
+    "arbeidsmarktkwalificatie": {
+      "codeWerkEnDenkniveauWerkzoekende": 9,
+      "vakvaardigheid": [
+        {
+          "omschrijving": "string"
+        }
+      ],
+      "taalbeheersing": [
+        {
+          "codeTaal": "str",
+          "codeNiveauTaalbeheersingMondeling": 9,
+          "codeNiveauTaalbeheersingSchriftelijk": 9,
+          "codeNiveauTaalbeheersingLezen": 9,
+          "codeNiveauTaalbeheersingLuisteren": 9
+        }
+      ],
+      "gedragscompetentie": [
+        {
+          "codeGedragscompetentie": 0,
+          "omschrijvingGedragscompetentie": "string",
+          "codeBeheersingGedragscompetentie": 9
+        }
+      ],
+      "interesse": [
+        {
+          "naamInteresse": "string"
+        }
+      ],
+      "rijbewijs": [
+        {
+          "codeSoortRijbewijs": "str"
+        }
+      ],
+      "cursus": [
+        {
+          "naamCursus": "string",
+          "datumCertificaat": "2022-01-07",
+          "datumAanvangVolgenCursus": "2022-01-07",
+          "datumEindeVolgenCursus": "2022-01-07",
+          "naamOpleidingsinstituut": "string"
+        }
+      ],
+      "opleiding": [
+        {
+          "codeNiveauOpleiding": 9,
+          "indicatieDiploma": 0,
+          "datumDiploma": "2022-01-07",
+          "opleidingsnaam": {
+            "codeOpleidingsnaam": 0,
+            "omschrijvingOpleidingsnaam": "string"
+          },
+          "datumAanvangVolgenOpleiding": "2022-01-07",
+          "datumEindeVolgenOpleiding": "2022-01-07",
+          "codeStatusOpleiding": 9,
+          "naamOpleidingsinstituut": "string"
+        }
+      ],
+      "werkervaring": [
+        {
+          "datumAanvangWerkzaamheden": "2022-01-07",
+          "datumEindeWerkzaamheden": "2022-01-07",
+          "naamOrganisatie": "string",
+          "beroep": {
+            "codeBeroepsnaam": "string",
+            "omschrijvingBeroepsnaam": "string"
+          },
+          "toelichtingWerkervaring": "string"
+        }
+      ]
+    },
+    "emailadres": [
+      "string"
+    ],
+    "webadres": [
+      {
+        "codeWebadres": 99,
+        "url": "string"
+      }
+    ],
+    "telefoonnummer": [
+      "string"
+    ],
+    "contactpersoon": [
+      {
+        "naamContactpersoonAfdeling": "string",
+        "telefoonnummer": "string",
+        "emailadres": "string"
+      }
+    ],
+    "sector": [
+      {
+        "codeSbi": 0
+      }
+    ],
+    "bemiddelingsberoep": [
+      {
+        "codeBeroepsnaam": "string",
+        "omschrijvingBeroepsnaam": "string"
+      },
+      {
+        "naamBeroepOngecodeerd": "string"
+      }
+    ]
+  }
+}

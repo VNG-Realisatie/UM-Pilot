@@ -1,0 +1,115 @@
+{
+  "vraagID": "string",
+  "maximumAantalResultatenBereikt": true,
+  "matches": [
+    {
+      "vumID": "string",
+      "indicatieLdrRegistratie": 0,
+      "indicatieBeschikbaarheidContactgegevens": 0,
+      "voorkeursland": [
+        {
+          "landencodeIso": "st"
+        }
+      ],
+      "vervoermiddel": [
+        {
+          "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+          "indicatieBeschikbaarVoorWoonWerkverkeer": 0
+        }
+      ],
+      "mobiliteit": {
+        "bemiddelingspostcode": "string",
+        "maximaleReisafstand": 999,
+        "maximaleReistijd": 999
+      },
+      "flexibiliteit": {
+        "codeRegiostraal": 9,
+        "indicatieOnregelmatigWerkOfPloegendienst": 0,
+        "datumAanvangBeschikbaarVoorWerk": "2022-01-07",
+        "datumEindeBeschikbaarVoorWerk": "2022-01-07"
+      },
+      "werktijden": {
+        "aantalWerkurenPerWeekMinimaal": 99,
+        "aantalWerkurenPerWeekMaximaal": 99,
+        "indicatieKantoortijden": 0
+      },
+      "contractvorm": [
+        {
+          "codeTypeArbeidscontract": "s",
+          "codeTypeOvereenkomst": "st"
+        }
+      ],
+      "arbeidsmarktkwalificatie": {
+        "codeWerkEnDenkniveauWerkzoekende": 9,
+        "vakvaardigheid": [
+          {
+            "omschrijving": "string"
+          }
+        ],
+        "taalbeheersing": [
+          {
+            "codeTaal": "str",
+            "codeNiveauTaalbeheersingMondeling": 9,
+            "codeNiveauTaalbeheersingSchriftelijk": 9,
+            "codeNiveauTaalbeheersingLezen": 9,
+            "codeNiveauTaalbeheersingLuisteren": 9
+          }
+        ],
+        "gedragscompetentie": [
+          {
+            "codeGedragscompetentie": 0,
+            "omschrijvingGedragscompetentie": "string",
+            "codeBeheersingGedragscompetentie": 9
+          }
+        ],
+        "rijbewijs": [
+          {
+            "codeSoortRijbewijs": "str"
+          }
+        ],
+        "cursus": [
+          {
+            "naamCursus": "string",
+            "datumCertificaat": "2022-01-07"
+          }
+        ],
+        "opleiding": [
+          {
+            "codeNiveauOpleiding": 9,
+            "indicatieDiploma": 0,
+            "datumDiploma": "2022-01-07",
+            "opleidingsnaam": {
+              "codeOpleidingsnaam": 0,
+              "omschrijvingOpleidingsnaam": "string"
+            }
+          }
+        ],
+        "werkervaring": [
+          {
+            "datumAanvangWerkzaamheden": "2022-01-07",
+            "datumEindeWerkzaamheden": "2022-01-07",
+            "naamOrganisatie": "string",
+            "beroep": {
+              "codeBeroepsnaam": "string",
+              "omschrijvingBeroepsnaam": "string"
+            }
+          }
+        ]
+      },
+      "sector": [
+        {
+          "codeSbi": 0
+        }
+      ],
+      "bemiddelingsberoep": [
+        {
+          "codeBeroepsnaam": "string",
+          "omschrijvingBeroepsnaam": "string"
+        },
+        {
+          "naamBeroepOngecodeerd": "string"
+        }
+      ]
+    }
+  ]
+}

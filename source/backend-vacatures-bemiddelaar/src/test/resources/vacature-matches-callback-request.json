@@ -1,0 +1,115 @@
+{
+  "vraagID": "string",
+  "maximumAantalResultatenBereikt": true,
+  "matches": [
+    {
+      "vumID": "string",
+      "codeWerkEnDenkniveauMinimaal": "s",
+      "indicatieLdrRegistratie": 0,
+      "sluitingsDatumVacature": "2021-12-21",
+      "sollicitatiewijze": [
+        {
+          "codeSollicitatiewijze": "s"
+        }
+      ],
+      "werkgever": {
+        "adresHouding": [
+          {
+            "codeFunctieAdres": "s",
+            "adres": {
+              "adresBuitenland": {
+                "landencodeIso": "st"
+              }
+            }
+          }
+        ],
+        "sector": [
+          {
+            "codeSbi": 0
+          }
+        ]
+      },
+      "sector": {
+        "codeSbi": 0
+      },
+      "arbeidsVoorwaarden": {
+        "datumAanvangWerkzaamheden": "2021-12-21",
+        "datumEindeWerkzaamheden": "2021-12-21",
+        "salarisIndicatie": "string"
+      },
+      "contractvorm": [
+        {
+          "codeTypeArbeidscontract": "s",
+          "codeTypeOvereenkomst": "st"
+        }
+      ],
+      "beroep": {
+        "codeBeroepsnaam": "string",
+        "omschrijvingBeroepsnaam": "string"
+      },
+      "werkervaring": [
+        {
+          "aantalJarenWerkzaamInBeroep": 99
+        }
+      ],
+      "rijbewijs": [
+        {
+          "codeSoortRijbewijs": "str"
+        }
+      ],
+      "vervoermiddel": [
+        {
+          "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+          "indicatieBeschikbaarVoorWoonWerkverkeer": 0
+        }
+      ],
+      "flexibiliteit": {
+        "codeRegiostraal": 9,
+        "indicatieOnregelmatigWerkOfPloegendienst": 0,
+        "datumAanvangBeschikbaarVoorWerk": "2021-12-21",
+        "datumEindeBeschikbaarVoorWerk": "2021-12-21"
+      },
+      "werktijden": {
+        "aantalWerkurenPerWeekMinimaal": 99,
+        "aantalWerkurenPerWeekMaximaal": 99,
+        "indicatieKantoortijden": 0
+      },
+      "cursus": [
+        {
+          "naamCursus": "string"
+        }
+      ],
+      "opleiding": [
+        {
+          "codeNiveauOpleiding": 9,
+          "indicatieDiploma": 0,
+          "opleidingsnaam": {
+            "codeOpleidingsnaam": 0,
+            "omschrijvingOpleidingsnaam": "string"
+          }
+        }
+      ],
+      "gedragscompetentie": [
+        {
+          "codeGedragscompetentie": 0,
+          "omschrijvingGedragscompetentie": "string",
+          "codeBeheersingGedragscompetentie": 9
+        }
+      ],
+      "vakvaardigheid": [
+        {
+          "omschrijving": "string"
+        }
+      ],
+      "taalbeheersing": [
+        {
+          "codeTaal": "str",
+          "codeNiveauTaalbeheersingMondeling": 9,
+          "codeNiveauTaalbeheersingSchriftelijk": 9,
+          "codeNiveauTaalbeheersingLezen": 9,
+          "codeNiveauTaalbeheersingLuisteren": 9
+        }
+      ]
+    }
+  ]
+}

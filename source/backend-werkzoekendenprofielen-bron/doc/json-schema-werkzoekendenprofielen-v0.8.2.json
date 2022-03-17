@@ -1,0 +1,1358 @@
+{
+    "$id": "https://www.vngrealisatie.nl",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "WerkzoekendeProfielen tussen VUM-UV en bronnen v0.99.4",
+    "examples": [
+        {
+            "indicatieLdrRegistratie": 1,
+            "indicatieBeschikbaarheidContactgegevens": 1,
+            "persoonlijkePresentatie": "string",
+            "voorkeursland": [
+                {
+                    "landencodeIso": "ST"
+                }
+            ],
+            "eisAanWerk": {
+                "indicatieAanpassingWerkomgeving": 0,
+                "indicatieBegeleiding": 0,
+                "indicatieWerkvariatie": 0
+            },
+            "vervoermiddel": [
+                {
+                    "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+                    "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+                    "codeVervoermiddel": 2
+                }
+            ],
+            "mobiliteit": {
+                "bemiddelingspostcode": "4600AA",
+                "maximaleReisafstand": 999,
+                "maximaleReistijd": 999
+            },
+            "flexibiliteit": {
+                "codeRegiostraal": 9,
+                "indicatieOnregelmatigWerkOfPloegendienst": 1,
+                "datumAanvangBeschikbaarVoorWerk": "2021-12-06",
+                "datumEindeBeschikbaarVoorWerk": "2021-12-06"
+            },
+            "werktijden": {
+                "aantalWerkurenPerWeekMinimaal": 99,
+                "aantalWerkurenPerWeekMaximaal": 99,
+                "indicatieKantoortijden": 1
+            },
+            "contractvorm": [
+                {
+                    "codeTypeArbeidscontract": "B",
+                    "codeTypeOvereenkomst": "01"
+                }
+            ],
+            "arbeidsmarktkwalificatie": {
+                "codeWerkEnDenkniveauWerkzoekende": 4,
+                "vakvaardigheid": [
+                    {
+                        "omschrijving": "string"
+                    }
+                ],
+                "taalbeheersing": [
+                    {
+                        "codeTaal": "str",
+                        "codeNiveauTaalbeheersingMondeling": 4,
+                        "codeNiveauTaalbeheersingSchriftelijk": 4,
+                        "codeNiveauTaalbeheersingLezen": 4,
+                        "codeNiveauTaalbeheersingLuisteren": 4
+                    }
+                ],
+                "gedragscompetentie": [
+                    {
+                        "codeGedragscompetentie": 24100,
+                        "omschrijvingGedragscompetentie": "string",
+                        "codeBeheersingGedragscompetentie": 9
+                    }
+                ],
+                "interesse": [
+                    {
+                        "naamInteresse": "string"
+                    }
+                ],
+                "rijbewijs": [
+                    {
+                        "codeSoortRijbewijs": "B"
+                    }
+                ],
+                "cursus": [
+                    {
+                        "naamCursus": "string",
+                        "datumCertificaat": "2021-12-06",
+                        "datumAanvangVolgenCursus": "2021-12-06",
+                        "datumEindeVolgenCursus": "2021-12-06",
+                        "naamOpleidingsinstituut": "string"
+                    }
+                ],
+                "opleiding": [
+                    {
+                        "codeNiveauOpleiding": 1,
+                        "indicatieDiploma": 1,
+                        "datumDiploma": "2021-12-06",
+                        "opleidingsnaam": {
+                            "codeOpleidingsnaam": 0,
+                            "omschrijvingOpleidingsnaam": "string"
+                        },
+                        "datumAanvangVolgenOpleiding": "2021-12-06",
+                        "datumEindeVolgenOpleiding": "2021-12-06",
+                        "codeStatusOpleiding": 1,
+                        "naamOpleidingsinstituut": "string"
+                    }
+                ],
+                "werkervaring": [
+                    {
+                        "datumAanvangWerkzaamheden": "2021-12-06",
+                        "datumEindeWerkzaamheden": "2021-12-06",
+                        "naamOrganisatie": "string",
+                        "beroep": {
+                            "codeBeroepsnaam": "string",
+                            "omschrijvingBeroepsnaam": "string"
+                        },
+                        "toelichtingWerkervaring": "string"
+                    }
+                ]
+            },
+            "emailadres": [
+                "email@email.com"
+            ],
+            "webadres": [
+                {
+                    "codeWebadres": 1,
+                    "url": "www.url.com"
+                }
+            ],
+            "telefoonnummer": [
+                "0612345678"
+            ],
+            "contactpersoon": [
+                {
+                    "naamContactpersoonAfdeling": "string",
+                    "telefoonnummer": "0612345678",
+                    "emailadres": "email@email.com"
+                }
+            ],
+            "sector": [
+                {
+                    "codeSbi": 0
+                }
+            ],
+            "bemiddelingsberoep": [
+                {
+                    "codeBeroepsnaam": "string",
+                    "omschrijvingBeroepsnaam": "string"
+                },
+                {
+                    "naamBeroepOngecodeerd": "string"
+                }
+            ]
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "indicatieLdrRegistratie": {
+            "$id": "#/properties/indicatieLdrRegistratie",
+            "description": "De indicatie die aangeeft of voor de natuurlijk persoon in het Landelijk Doelgroepregister een grondslag met betrekking tot arbeidsbeperktheid geregistreerd is.",
+            "enum": [
+                1,
+                2
+            ],
+            "type": "integer"
+        },
+        "indicatieBeschikbaarheidContactgegevens": {
+            "$id": "#/properties/indicatieBeschikbaarheidContactgegevens",
+            "description": "Indicatie die aangeeft of er contactgegevens, van de werkzoekende en/of de contactpersoon, in het profiel aanwezig zijn.",
+            "enum": [
+                1,
+                2
+            ],
+            "type": "integer"
+        },
+        "persoonlijkePresentatie": {
+            "$id": "#/properties/persoonlijkePresentatie",
+            "description": "De persoonlijke presentatie van de werkzoekende.",
+            "examples": [
+                "string"
+            ],
+            "maxLength": 2000,
+            "type": "string"
+        },
+        "voorkeursland": {
+            "$id": "#/properties/voorkeursland",
+            "examples": [
+                [
+                    {
+                        "landencodeIso": "ST"
+                    }
+                ]
+            ],
+            "type": "array",
+            "items": {
+                "$id": "#/properties/voorkeursland/items",
+                "type": [],
+                "anyOf": [
+                    {
+                        "$id": "#/properties/voorkeursland/items/anyOf/0",
+                        "description": "Het land waarin de werkzoekende bij voorkeur wil gaan werken. De keuze is beperkt tot de landcodes die behoren tot de Europese Economische Ruimte (EER).",
+                        "examples": [
+                            {
+                                "landencodeIso": "ST"
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "landencodeIso": {
+                                "$id": "#/properties/voorkeursland/items/anyOf/0/properties/landencodeIso",
+                                "examples": [
+                                    "ST"
+                                ],
+								"pattern": "^[A-Z]{2}$",
+                                "maxLength": 2,
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "eisAanWerk": {
+            "$id": "#/properties/eisAanWerk",
+            "description": "De werkomstandigheden en/of de inhoud van het werk die aanwezig moeten zijn, zodat de werkzoekende het werk uit kan voeren.",
+            "examples": [
+                {
+                    "indicatieAanpassingWerkomgeving": 0,
+                    "indicatieBegeleiding": 0,
+                    "indicatieWerkvariatie": 0
+                }
+            ],
+            "type": "object",
+            "properties": {
+                "indicatieAanpassingWerkomgeving": {
+                    "$id": "#/properties/eisAanWerk/properties/indicatieAanpassingWerkomgeving",
+                    "description": "Indicatie die aangeeft of de werkzoekende een vorm van aanpassing aan de werkomgeving nodig heeft om te kunnen functioneren.",
+                    "enum": [
+						0,
+						1,
+						2
+					],
+                    "type": "integer"
+                },
+                "indicatieBegeleiding": {
+                    "$id": "#/properties/eisAanWerk/properties/indicatieBegeleiding",
+                    "description": "Indicatie die aangeeft of de werkzoekende een vorm van begeleiding nodig heeft om te kunnen functioneren.",
+                    "enum": [
+						0,
+						1,
+						2
+					],
+                    "type": "integer"
+                },
+                "indicatieWerkvariatie": {
+                    "$id": "#/properties/eisAanWerk/properties/indicatieWerkvariatie",
+                    "description": "Indicatie die aangeeft of de werkzoekende een vorm van werkvariatie nodig heeft om te kunnen functioneren.",
+                    "enum": [
+						0,
+						1,
+						2
+					],
+                    "type": "integer"
+                }
+            }
+        },
+        "vervoermiddel": {
+            "$id": "#/properties/vervoermiddel",
+            "examples": [
+                [
+                    {
+                        "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+                        "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+                        "codeVervoermiddel": 2
+                    }
+                ]
+            ],
+            "type": "array",
+            "items": {
+                "$id": "#/properties/vervoermiddel/items",
+                "type": [],
+                "anyOf": [
+                    {
+                        "$id": "#/properties/vervoermiddel/items/anyOf/0",
+                        "description": "Een object dat bedoeld is om personen of goederen te vervoeren.",
+                        "examples": [
+                            {
+                                "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+                                "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+                                "codeVervoermiddel": 2
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "indicatieBeschikbaarVoorUitvoeringWerk": {
+                                "$id": "#/properties/vervoermiddel/items/anyOf/0/properties/indicatieBeschikbaarVoorUitvoeringWerk",
+                                "description": "Indicatie die aangeeft of er een vervoermiddel beschikbaar is voor het uitvoeren van de functie.",
+                                 "enum": [
+									0,
+									1,
+									2
+								],
+                                "type": "integer"
+                            },
+                            "indicatieBeschikbaarVoorWoonWerkverkeer": {
+                                "$id": "#/properties/vervoermiddel/items/anyOf/0/properties/indicatieBeschikbaarVoorWoonWerkverkeer",
+                                "description": "Indicatie die aangeeft of de werkzoekende het vervoermiddel ter beschikking heeft voor woon-werkverkeer.",
+                                "enum": [
+									0,
+									1,
+									2
+								],
+                                "type": "integer"
+                            },
+                            "codeVervoermiddel": {
+                                "$id": "#/properties/vervoermiddel/items/anyOf/0/properties/codeVervoermiddel",
+                                "description": "De code die het soort vervoermiddel aangeeft.",
+                                "enum": [
+									1,
+									2,
+									3,
+									4,
+									5,
+									9
+								],
+                                "type": "integer"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "mobiliteit": {
+            "$id": "#/properties/mobiliteit",
+            "description": "Gewenste reisafstand woon-werk.",
+            "examples": [
+                {
+                    "bemiddelingspostcode": "4600AA",
+                    "maximaleReisafstand": 999,
+                    "maximaleReistijd": 999
+                }
+            ],
+            "type": "object",
+            "properties": {
+                "bemiddelingspostcode": {
+                    "$id": "#/properties/mobiliteit/properties/bemiddelingspostcode",
+                    "description": "De postcode van waaruit de werkzoekende bemiddeld wenst te worden.",
+                    "examples": [
+                        "4600AA"
+                    ],
+                    "pattern": "^[1-9][0-9]{3}(?i)(?!sa|sd|ss)[a-z]{2}$",
+                    "type": "string"
+                },
+                "maximaleReisafstand": {
+                    "$id": "#/properties/mobiliteit/properties/maximaleReisafstand",
+                    "description": "De maximale afstand, uitgedrukt in kilometers, waarbinnen de werkzoekende wil worden bemiddeld.",
+                    "examples": [
+                        999
+                    ],
+                    "maximum": 999,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "maximaleReistijd": {
+                    "$id": "#/properties/mobiliteit/properties/maximaleReistijd",
+                    "description": "De maximale acceptabele reistijd in minuten die de werkzoekende accepteert in verband met het verrichten van werk.",
+                    "examples": [
+                        999
+                    ],
+                    "maximum": 999,
+                    "minimum": 0,
+                    "type": "integer"
+                }
+            }
+        },
+        "flexibiliteit": {
+            "$id": "#/properties/flexibiliteit",
+            "description": "De bereidheid van de werkzoekende om concessies te doen aan de eisen die hij stelt aan het aanvaarden van arbeid.",
+            "examples": [
+                {
+                    "codeRegiostraal": 9,
+                    "indicatieOnregelmatigWerkOfPloegendienst": 0,
+                    "datumAanvangBeschikbaarVoorWerk": "2021-12-06",
+                    "datumEindeBeschikbaarVoorWerk": "2021-12-06"
+                }
+            ],
+            "type": "object",
+            "properties": {
+                "codeRegiostraal": {
+                    "$id": "#/properties/flexibiliteit/properties/codeRegiostraal",
+					"maximum": 9,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "indicatieOnregelmatigWerkOfPloegendienst": {
+                    "$id": "#/properties/flexibiliteit/properties/indicatieOnregelmatigWerkOfPloegendienst",
+                    "description": "Indicatie die aangeeft of het werk op onregelmatige tijden en/of in ploegendienst plaatsvindt.",
+                     "enum": [
+						0,
+						1,
+						2
+					],
+                    "type": "integer"
+                },
+                "datumAanvangBeschikbaarVoorWerk": {
+                    "$id": "#/properties/flexibiliteit/properties/datumAanvangBeschikbaarVoorWerk",
+                    "description": "De datum van de eerste werkdag.",
+                    "examples": [
+                        "2021-12-06"
+                    ],
+					"format": "date",
+                    "type": "string"
+                },
+                "datumEindeBeschikbaarVoorWerk": {
+                    "$id": "#/properties/flexibiliteit/properties/datumEindeBeschikbaarVoorWerk",
+                    "description": "De datum van de laatste werkdag.",
+                    "examples": [
+                        "2021-12-06"
+                    ],
+					"format": "date",
+                    "type": "string"
+                }
+            }
+        },
+        "werktijden": {
+            "$id": "#/properties/werktijden",
+            "description": "De mate waarin de werkzoekende beschikbaar is voor werk.",
+            "type": "object",
+            "properties": {
+                "aantalWerkurenPerWeekMinimaal": {
+                    "$id": "#/properties/werktijden/properties/aantalWerkurenPerWeekMinimaal",
+                    "description": "Het aantal dat de hoeveelheid minimale werkuren per week aangeeft.",
+                    "maximum": 99,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "aantalWerkurenPerWeekMaximaal": {
+                    "$id": "#/properties/werktijden/properties/aantalWerkurenPerWeekMaximaal",
+                    "description": "Het aantal dat de hoeveelheid maximale werkuren per week aangeeft.",
+                    "maximum": 99,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "indicatieKantoortijden": {
+                    "$id": "#/properties/werktijden/properties/indicatieKantoortijden",
+                    "description": "Indicatie die aangeeft of er sprake is van het deel van een dag waarin kantoorwerkzaamheden traditioneel (overdag) worden verricht.",
+                    "enum": [
+						0,
+						1,
+						2
+					],
+                    "type": "integer"
+                }
+            }
+        },
+        "contractvorm": {
+            "$id": "#/properties/contractvorm",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/contractvorm/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/contractvorm/items/anyOf/0",
+                        "description": "De contractvorm welke van toepassing is.",
+                        "type": "object",
+                        "properties": {
+                            "codeTypeArbeidscontract": {
+                                "$id": "#/properties/contractvorm/items/anyOf/0/properties/codeTypeArbeidscontract",
+                                "description": "De code die aangeeft of het arbeidscontract voor bepaalde of onbepaalde tijd van toepassing is.",
+                                "enum": [
+									"B",
+									"O"
+								],
+                                "type": "string"
+                            },
+                            "codeTypeOvereenkomst": {
+                                "$id": "#/properties/contractvorm/items/anyOf/0/properties/codeTypeOvereenkomst",
+                                "description": "De code die aangeeft welk type overeenkomst van toepassing is.",
+                                "enum": [
+									"01",
+									"02",
+									"03",
+									"04"
+								],
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "arbeidsmarktkwalificatie": {
+            "$id": "#/properties/arbeidsmarktkwalificatie",
+            "description": "De set van eigenschappen, kennis en kunde die een werkzoekende bezit en relevant zijn voor het vinden van werk.",
+            "type": "object",
+            "properties": {
+                "codeWerkEnDenkniveauWerkzoekende": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/codeWerkEnDenkniveauWerkzoekende",
+                    "description": "Code die het opleidingsniveau aangeeft dat bereikt is op basis van opleiding en/of werkervaring.",
+                    "enum": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+                    "type": "integer"
+                },
+                "vakvaardigheid": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/vakvaardigheid",
+                    "examples": [
+                        [
+                            {
+                                "omschrijving": "string"
+                            }
+                        ]
+                    ],
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/vakvaardigheid/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/vakvaardigheid/items/anyOf/0",
+                                "description": "Het vermogen om een handeling in een bepaalde mate bekwaam uit te voeren.",
+                                "examples": [
+                                    {
+                                        "omschrijving": "string"
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "omschrijving": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/vakvaardigheid/items/anyOf/0/properties/omschrijving",
+                                        "description": "De naamgeving van een handeling die in een bepaalde mate bekwaam uitgevoerd kan worden.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 120,
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "taalbeheersing": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0",
+                                "description": "De mate waarin een natuurlijk persoon een taal beheerst.",
+                                "examples": [
+                                    {
+                                        "codeTaal": "aaa",
+                                        "codeNiveauTaalbeheersingMondeling": 7,
+                                        "codeNiveauTaalbeheersingSchriftelijk": 7,
+                                        "codeNiveauTaalbeheersingLezen": 4,
+                                        "codeNiveauTaalbeheersingLuisteren": 5
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "codeTaal": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0/properties/codeTaal",
+                                        "description": "De code die de taal aangeeft.",
+										"pattern": "^[a-z]{3}$",
+                                        "maxLength": 3,
+                                        "type": "string"
+                                    },
+                                    "codeNiveauTaalbeheersingMondeling": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0/properties/codeNiveauTaalbeheersingMondeling",
+                                        "description": "Code die de mate aangeeft waarin de natuurlijk persoon de betreffende taal mondeling machtig is.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											3,
+											4,
+											8
+										],
+                                        "type": "integer"
+                                    },
+                                    "codeNiveauTaalbeheersingSchriftelijk": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0/properties/codeNiveauTaalbeheersingSchriftelijk",
+                                        "description": "Code die de mate aangeeft waarin de natuurlijk persoon de betreffende taal schriftelijk machtig is.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											3,
+											4,
+											8
+										],
+                                        "type": "integer"
+                                    },
+                                    "codeNiveauTaalbeheersingLezen": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0/properties/codeNiveauTaalbeheersingLezen",
+                                        "description": "Code die die het niveau van de leesvaardigheid van de natuurlijk persoon in de betreffende taal aangeeft.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											3,
+											4,
+											8
+										],
+                                        "type": "integer"
+                                    },
+                                    "codeNiveauTaalbeheersingLuisteren": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/taalbeheersing/items/anyOf/0/properties/codeNiveauTaalbeheersingLuisteren",
+                                        "description": "Code die het niveau van luistervaardigheid van de natuurlijk persoon in de betreffende taal aangeeft.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											3,
+											4,
+											8
+										],
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "gedragscompetentie": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie/items/anyOf/0",
+                                "description": "De karaktereigenschappen van een natuurlijk persoon.",
+                                "examples": [
+                                    {
+                                        "codeGedragscompetentie": 24100,
+                                        "omschrijvingGedragscompetentie": "string",
+                                        "codeBeheersingGedragscompetentie": 3
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "codeGedragscompetentie": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie/items/anyOf/0/properties/codeGedragscompetentie",
+                                        "description": "De code die de GEDRAGSCOMPETENTIE aangeeft.",
+                                          "enum": [
+											24100, 
+											24101, 
+											24102, 
+											24104, 
+											24105, 
+											24106, 
+											24107, 
+											24108, 
+											24109, 
+											24110, 
+											24111, 
+											24112, 
+											24113, 
+											24114, 
+											24115, 
+											24116, 
+											24118, 
+											24119, 
+											24120, 
+											24121, 
+											24122, 
+											24123, 
+											24124, 
+											24125, 
+											24126 
+										],
+                                        "type": "integer"
+                                    },
+                                    "omschrijvingGedragscompetentie": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie/items/anyOf/0/properties/omschrijvingGedragscompetentie",
+                                        "description": "De omschrijving van de GEDRAGSCOMPETENTIE.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 120,
+                                        "type": "string"
+                                    },
+                                    "codeBeheersingGedragscompetentie": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/gedragscompetentie/items/anyOf/0/properties/codeBeheersingGedragscompetentie",
+                                        "description": "De code die aangeeft in welke mate de gedragscompetentie beheerst wordt.",
+                                         "enum": [
+											1,
+											2,
+											3,
+											4,
+											5,
+											9
+										],
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "interesse": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/interesse",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/interesse/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/interesse/items/anyOf/0",
+                                "description": "Een onderwerp waar de werkzoekende belangstelling voor heeft.",
+                                "examples": [
+                                    {
+                                        "naamInteresse": "string"
+                                    }
+                                ],
+                                "maxLength": 120,
+                                "type": "object",
+                                "properties": {
+                                    "naamInteresse": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/interesse/items/anyOf/0/properties/naamInteresse",
+                                        "type": "string",
+                                        "description": "De naam van een interesse zoals deze is opgegeven door werkzoekende of werkgever.",
+                                        "examples": [
+                                            "string"
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "rijbewijs": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/rijbewijs",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/rijbewijs/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/rijbewijs/items/anyOf/0",
+                                "description": "Geautoriseerd document om een motorvoertuig over de weg te mogen besturen.",
+                                "examples": [
+                                    {
+                                        "codeSoortRijbewijs": "A"
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "codeSoortRijbewijs": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/rijbewijs/items/anyOf/0/properties/codeSoortRijbewijs",
+                                        "description": "De code die de rijbewijscategorie aangeeft.",
+                                        "enum": [
+											"A", 
+											"A1", 
+											"A2", 
+											"AM", 
+											"B", 
+											"B+", 
+											"C1", 
+											"C", 
+											"D1", 
+											"D", 
+											"BE", 
+											"C1E", 
+											"CE", 
+											"D1E", 
+											"DE", 
+											"T" 
+										],
+                                        "maxLength": 3,
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "cursus": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0",
+                                "description": "De cursus die de werkzoekende volgt, heeft gevolgd of heeft ingepland om te gaan volgen.",
+                                "examples": [
+                                    {
+                                        "naamCursus": "string",
+                                        "datumCertificaat": "2021-12-06",
+                                        "datumAanvangVolgenCursus": "2021-12-06",
+                                        "datumEindeVolgenCursus": "2021-12-06",
+                                        "naamOpleidingsinstituut": "string"
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "naamCursus": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0/properties/naamCursus",
+                                        "description": "De naam van de cursus zoals deze bekend staat.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 120,
+                                        "type": "string"
+                                    },
+                                    "datumCertificaat": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0/properties/datumCertificaat",
+                                        "description": "De datum van de dag die op het certificaat staat.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "datumAanvangVolgenCursus": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0/properties/datumAanvangVolgenCursus",
+                                        "description": "De datum van de eerste dag waarop de cursus wordt of is gevolgd.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "datumEindeVolgenCursus": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0/properties/datumEindeVolgenCursus",
+                                        "description": "De datum van de laatste dag dat de cursus is gevolgd.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "naamOpleidingsinstituut": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/cursus/items/anyOf/0/properties/naamOpleidingsinstituut",
+                                        "description": "De naam van het instituut waar de opleiding of cursus is gevolgd.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 500,
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "opleiding": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0",
+                                "description": "De scholing die de werkzoekende volgt of heeft gevolgd.",
+                                "examples": [
+                                    {
+                                        "codeNiveauOpleiding": 9,
+                                        "indicatieDiploma": 0,
+                                        "datumDiploma": "2021-12-06",
+                                        "opleidingsnaam": {
+                                            "codeOpleidingsnaam": 0,
+                                            "omschrijvingOpleidingsnaam": "string"
+                                        },
+                                        "datumAanvangVolgenOpleiding": "2021-12-06",
+                                        "datumEindeVolgenOpleiding": "2021-12-06",
+                                        "codeStatusOpleiding": 0,
+                                        "naamOpleidingsinstituut": "string"
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "codeNiveauOpleiding": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/codeNiveauOpleiding",
+                                        "description": "De code die het niveau van de OPLEIDING aangeeft.",
+                                        "enum": [
+											1,
+											2,
+											3,
+											4,
+											5,
+											6,
+											9
+										],
+                                        "type": "integer"
+                                    },
+                                    "indicatieDiploma": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/indicatieDiploma",
+                                        "description": "Indicatie die aangeeft of voor de OPLEIDING een diploma, een getuigschrift of één of meer (deel-)certifica(a)t(en) is behaald.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											8
+										],
+                                        "type": "integer"
+                                    },
+                                    "datumDiploma": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/datumDiploma",
+                                        "description": "De datum van de dag die op het diploma staat.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "opleidingsnaam": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/opleidingsnaam",
+                                        "description": "De naam van de OPLEIDING.",
+                                        "examples": [
+                                            {
+                                                "codeOpleidingsnaam": 0,
+                                                "omschrijvingOpleidingsnaam": "string"
+                                            }
+                                        ],
+                                        "type": "object",
+										"oneOf":[
+											{
+												"properties": {
+													"codeOpleidingsnaam": {
+														"$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/opleidingsnaam/properties/codeOpleidingsnaam",
+														"description": "De unieke code van een OPLEIDINGSNAAM.",
+														"examples": [
+															0
+														],
+														"maximum": 9999999999,
+														"minimum": 0,
+														"type": "integer"
+													},
+													"omschrijvingOpleidingsnaam": {
+														"$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/opleidingsnaam/properties/omschrijvingOpleidingsnaam",
+														"description": "De naam van de OPLEIDING.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 120,
+														"type": "string"
+													}
+												}
+											},
+											{	"properties": {
+													"naamOpleidingOngecodeerd": {
+														"$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/1/properties/opleidingsnaam/properties/naamOpleidingOngecodeerd",
+														"description": "De omschrijving van de OPLEIDING.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 120,
+														"type": "string"
+													},
+													"omschrijvingOpleiding": {
+														"$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/1/properties/opleidingsnaam/properties/omschrijvingOpleiding",
+														"description": "De eigen omschrijving van de opleiding.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 2000,
+														"type": "string"
+													}
+												}
+											}
+											]
+                                    },
+                                    "datumAanvangVolgenOpleiding": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/datumAanvangVolgenOpleiding",
+                                        "description": "De datum van de eerste dag waarop de opleiding wordt of is gevolgd.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "datumEindeVolgenOpleiding": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/datumEindeVolgenOpleiding",
+                                        "description": "De datum van de laatste dag dat de opleiding is gevolgd.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "codeStatusOpleiding": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/codeStatusOpleiding",
+                                        "description": "Code die aangeeft in welk stadium de OPLEIDING zich bevindt.",
+                                        "enum": [
+											0,
+											1,
+											2,
+											3
+										],
+                                        "type": "integer"
+                                    },
+                                    "naamOpleidingsinstituut": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/opleiding/items/anyOf/0/properties/naamOpleidingsinstituut",
+                                        "description": "De naam van het instituut waar de opleiding of cursus is gevolgd.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 500,
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "werkervaring": {
+                    "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring",
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0",
+                                "description": "De werkzaamheden die een natuurlijk persoon in een bepaalde periode als beroep heeft uitgevoerd.",
+                                "examples": [
+                                    {
+                                        "datumAanvangWerkzaamheden": "2021-12-06",
+                                        "datumEindeWerkzaamheden": "2021-12-06",
+                                        "naamOrganisatie": "string",
+                                        "beroep": {
+                                            "codeBeroepsnaam": "string",
+                                            "omschrijvingBeroepsnaam": "string"
+                                        },
+                                        "toelichtingWerkervaring": "string"
+                                    }
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "datumAanvangWerkzaamheden": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0/properties/datumAanvangWerkzaamheden",
+                                        "description": "De datum van de eerste dag van de werkzaamheden.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "datumEindeWerkzaamheden": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0/properties/datumEindeWerkzaamheden",
+                                        "description": "De datum van de laatste dag van de werkzaamheden.",
+                                        "examples": [
+                                            "2021-12-06"
+                                        ],
+										"format": "date",
+                                        "type": "string"
+                                    },
+                                    "naamOrganisatie": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0/properties/naamOrganisatie",
+                                        "description": "De naam waaronder de organisatie bekend is.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 70,
+                                        "type": "string"
+                                    },
+                                    "beroep": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0/properties/beroep",
+                                        "examples": [
+                                            {
+                                                "codeBeroepsnaam": "string",
+                                                "omschrijvingBeroepsnaam": "string"
+                                            }
+                                        ],
+                                        "type": "object",
+										"oneOf" : [
+										    {
+												"properties": {
+													"codeBeroepsnaam": {
+														"$id": "#/properties/bemiddelingsberoep/items/oneOf/0/properties/codeBeroepsnaam",
+														"description": "De unieke code van de beroepsnaam uit het BO&C register.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 10,
+														"type": "string"
+													},
+													"omschrijvingBeroepsnaam": {
+														"$id": "#/properties/bemiddelingsberoep/items/oneOf/0/properties/omschrijvingBeroepsnaam",
+														"description": "De naam van het BEROEP.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 120,
+														"type": "string"
+													}
+												}
+											},
+											{
+											 "properties": {
+													"naamBeroepOngecodeerd": {
+														"$id": "#/properties/bemiddelingsberoep/items/anyOf/1/properties/naamBeroepOngecodeerd",
+														"description": "De omschrijving van het BEROEP.",
+														"examples": [
+															"string"
+														],
+														"maxLength": 120,
+														"type": "string"
+													}
+												}
+											}
+										]
+
+                                    },
+                                    "toelichtingWerkervaring": {
+                                        "$id": "#/properties/arbeidsmarktkwalificatie/properties/werkervaring/items/anyOf/0/properties/toelichtingWerkervaring",
+                                        "description": "De toelichting op de WERKERVARING.",
+                                        "examples": [
+                                            "string"
+                                        ],
+                                        "maxLength": 2000,
+                                        "type": "string"
+
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "emailadres": {
+            "$id": "#/properties/emailadres",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/emailadres/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/emailadres/items/anyOf/0",
+                        "description": "De aanduiding van de unieke aansluiting van de elektronische postbus van een PERSOON of ORGANISATIE op het internet.",
+                        "examples": [
+                            "string"
+                        ],
+                        "maxLength": 320,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "webadres": {
+            "$id": "#/properties/webadres",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/webadres/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/webadres/items/anyOf/0",
+                        "description": "De gegevens waarmee een webadres geïdentificeerd kan worden.",
+                        "examples": [
+                            {
+                                "codeWebadres": 1,
+                                "url": "string"
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "codeWebadres": {
+                                "$id": "#/properties/webadres/items/anyOf/0/properties/codeWebadres",
+                                "description": "De code die het soort webadres aangeeft.",
+                                "enum": [
+									1,
+									2
+								],
+                                "type": "integer"
+                            },
+                            "url": {
+                                "$id": "#/properties/webadres/items/anyOf/0/properties/url",
+                                "description": "De Uniform Resource Locator (URL) van het (web)adres van een bestand. ",
+                                "examples": [
+                                    "string"
+                                ],
+								"format": "uri",
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "telefoonnummer": {
+            "$id": "#/properties/telefoonnummer",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/telefoonnummer/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/telefoonnummer/items/anyOf/0",
+                        "description": "Het telefoonnummer waaronder een PERSOON of ORGANISATIE bereikbaar is.",
+                        "examples": [
+                            "string"
+                        ],
+                        "maxLength": 14,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "contactpersoon": {
+            "$id": "#/properties/contactpersoon",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/contactpersoon/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/contactpersoon/items/anyOf/0",
+                        "description": "De PERSOON of de afdeling van een ORGANISATIE waarbij een derde, voor deze in een specifieke situatie relevante, informatie kan verkrijgen.",
+                        "examples": [
+                            {
+                                "naamContactpersoonAfdeling": "string",
+                                "telefoonnummer": "string",
+                                "emailadres": "string"
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "naamContactpersoonAfdeling": {
+                                "$id": "#/properties/contactpersoon/items/anyOf/0/properties/naamContactpersoonAfdeling",
+                                "description": "De naam van de CONTACTPERSOON/-AFDELING",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 35,
+                                "type": "string"
+                            },
+                            "telefoonnummer": {
+                                "$id": "#/properties/contactpersoon/items/anyOf/0/properties/telefoonnummer",
+                                "description": "Het telefoonnummer waaronder een PERSOON of ORGANISATIE bereikbaar is.",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 14,
+                                "type": "string"
+                            },
+                            "emailadres": {
+                                "$id": "#/properties/contactpersoon/items/anyOf/0/properties/emailadres",
+                                "description": "De aanduiding van de unieke aansluiting van de elektronische postbus van een PERSOON of ORGANISATIE op het internet.",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 320,
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "sector": {
+            "$id": "#/properties/sector",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/sector/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/sector/items/anyOf/0",
+                        "description": "De sector bedroeps- en bedrijfsleven waarin de werkzoekende bemiddeld wenst te worden.",
+                        "examples": [
+                            {
+                                "codeSbi": 0
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "codeSbi": {
+                                "$id": "#/properties/sector/items/anyOf/0/properties/codeSbi",
+                                "description": "De code die de indeling van een bedrijf aangeeft volgens de Standaard Bedrijfs Indeling van  het Centraal Bureau voor de Statistiek.",
+                                "examples": [
+                                    0
+                                ],
+                                "maximum": 99999,
+                                "minimum": 0,
+                                "type": "integer"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "bemiddelingsberoep": {
+            "$id": "#/properties/bemiddelingsberoep",
+            "examples": [
+                [
+                    {
+                        "codeBeroepsnaam": "string",
+                        "omschrijvingBeroepsnaam": "string"
+                    },
+                    {
+                        "naamBeroepOngecodeerd": "string"
+                    }
+                ]
+            ],
+            "type": "array",
+            "items": {
+                "$id": "#/properties/bemiddelingsberoep/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/bemiddelingsberoep/items/anyOf/0",
+                        "description": "De naamgegevens van een BEROEP.",
+                        "examples": [
+                            {
+                                "codeBeroepsnaam": "string",
+                                "omschrijvingBeroepsnaam": "string"
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "codeBeroepsnaam": {
+                                "$id": "#/properties/bemiddelingsberoep/items/anyOf/0/properties/codeBeroepsnaam",
+                                "description": "De unieke code van de beroepsnaam uit het BO&C register.",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 10,
+                                "type": "string"
+                            },
+                            "omschrijvingBeroepsnaam": {
+                                "$id": "#/properties/bemiddelingsberoep/items/anyOf/0/properties/omschrijvingBeroepsnaam",
+                                "description": "De naam van het BEROEP.",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 120,
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$id": "#/properties/bemiddelingsberoep/items/anyOf/1",
+                        "description": "De omschrijving van de naam van een BEROEP.",
+                        "examples": [
+                            {
+                                "naamBeroepOngecodeerd": "string"
+                            }
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "naamBeroepOngecodeerd": {
+                                "$id": "#/properties/bemiddelingsberoep/items/anyOf/1/properties/naamBeroepOngecodeerd",
+                                "description": "De omschrijving van het BEROEP.",
+                                "examples": [
+                                    "string"
+                                ],
+                                "maxLength": 120,
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    container_name: elasticsearch
+    environment:
+      - cluster.name=vng
+      - node.name=node-1
+      - cluster.initial_master_nodes=node-1
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - network-elasticsearch
+
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:7.16.3'
+    container_name: kibana
+    environment:
+      - elasticsearch.hosts=http://localhost:9200
+    ports:
+      - 5601:5601
+    networks:
+      - network-elasticsearch
+
+volumes:
+  esdata1:
+    driver: local
+
+networks:
+  network-elasticsearch:

@@ -1,0 +1,139 @@
+{
+  "idVacature": "402881917e674462017e67449b7d0000",
+  "codeWerkEnDenkniveauMinimaal": "s",
+  "indicatieLdrRegistratie": 0,
+  "sluitingsDatumVacature": "2022-01-05",
+  "sollicitatiewijze": [
+    {
+      "codeSollicitatiewijze": "s"
+    },
+    {
+      "codeSollicitatiewijze": "a"
+    }
+  ],
+  "werkgever": {
+    "adresHouding": [
+      {
+        "codeFunctieAdres": "s",
+        "adres": {
+          "adresBuitenland": {
+            "landencodeIso": "NL"
+          }
+        }
+      },
+      {
+        "codeFunctieAdres": "B",
+        "adres": {
+          "adresBuitenland": {
+            "landencodeIso": "hi"
+          }
+        }
+      }
+    ],
+    "sector": [
+      {
+        "codeSbi": 0
+      },
+      {
+        "codeSbi": 1
+      }
+    ]
+  },
+  "sector": {
+    "codeSbi": 0
+  },
+  "arbeidsVoorwaarden": {
+    "datumAanvangWerkzaamheden": "2022-01-05",
+    "datumEindeWerkzaamheden": "2022-01-05",
+    "salarisIndicatie": "string"
+  },
+  "contractvorm": [
+    {
+      "codeTypeArbeidscontract": "s",
+      "codeTypeOvereenkomst": "st"
+    },
+    {
+      "codeTypeArbeidscontract": "x",
+      "codeTypeOvereenkomst": "yp"
+    }
+  ],
+  "beroep": {
+    "codeBeroepsnaam": "string",
+    "omschrijvingBeroepsnaam": "nothing in here"
+  },
+  "werkervaring": [
+    {
+      "aantalJarenWerkzaamInBeroep": 98
+    },
+    {
+      "aantalJarenWerkzaamInBeroep": 50
+    }
+  ],
+  "rijbewijs": [
+    {
+      "codeSoortRijbewijs": "str"
+    },
+    {
+      "codeSoortRijbewijs": "B"
+    }
+  ],
+  "vervoermiddel": [
+    {
+      "indicatieBeschikbaarVoorUitvoeringWerk": 0,
+      "indicatieBeschikbaarVoorWoonWerkverkeer": 1,
+      "codeVervoermiddel": 99
+    },
+    {
+      "indicatieBeschikbaarVoorUitvoeringWerk": 1,
+      "indicatieBeschikbaarVoorWoonWerkverkeer": 0,
+      "codeVervoermiddel": 99
+    }
+  ],
+  "flexibiliteit": {
+    "codeRegiostraal": 9,
+    "indicatieOnregelmatigWerkOfPloegendienst": 0,
+    "datumAanvangBeschikbaarVoorWerk": "2022-01-05",
+    "datumEindeBeschikbaarVoorWerk": "2022-01-05"
+  },
+  "werktijden": {
+    "aantalWerkurenPerWeekMinimaal": 99,
+    "aantalWerkurenPerWeekMaximaal": 99,
+    "indicatieKantoortijden": 1
+  },
+  "cursus": [
+    {
+      "naamCursus": "string"
+    }
+  ],
+  "opleiding": [
+    {
+      "codeNiveauOpleiding": 9,
+      "indicatieDiploma": 0,
+      "opleidingsnaam": {
+        "codeOpleidingsnaam": 0,
+        "omschrijvingOpleidingsnaam": "string"
+      }
+    }
+  ],
+  "gedragscompetentie": [
+    {
+      "codeGedragscompetentie": 0,
+      "omschrijvingGedragscompetentie": "string",
+      "codeBeheersingGedragscompetentie": 9
+    }
+  ],
+  "vakvaardigheid": [
+    {
+      "omschrijving": "string"
+    }
+  ],
+  "taalbeheersing": [
+    {
+      "codeTaal": "tah",
+      "codeNiveauTaalbeheersingMondeling": 9,
+      "codeNiveauTaalbeheersingSchriftelijk": 9,
+      "codeNiveauTaalbeheersingLezen": 9,
+      "codeNiveauTaalbeheersingLuisteren": 9
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "vraagObject": {
+    "indicatieLdrRegistratie": 1,
+    "indicatieBeschikbaarheidContactgegevens": 1,
+    "voorkeursland": [
+      {
+        "landencodeIso": "ST"
+      }
+    ],
+    "vervoermiddel": [
+      {
+        "indicatieBeschikbaarVoorUitvoeringWerk": 1,
+        "indicatieBeschikbaarVoorWoonWerkverkeer": 1
+      }
+    ],
+    "mobiliteit": {
+      "bemiddelingspostcode": "4600AA",
+      "maximaleReisafstand": 999,
+      "maximaleReistijd": 999
+    },
+    "flexibiliteit": {
+      "codeRegiostraal": 1,
+      "indicatieOnregelmatigWerkOfPloegendienst": 1,
+      "datumAanvangBeschikbaarVoorWerk": "2021-11-25",
+      "datumEindeBeschikbaarVoorWerk": "2021-11-25"
+    },
+    "werktijden": {
+      "aantalWerkurenPerWeekMinimaal": 99,
+      "aantalWerkurenPerWeekMaximaal": 99,
+      "indicatieKantoortijden": 0
+    },
+    "contractvorm": [
+      {
+        "codeTypeArbeidscontract": "B",
+        "codeTypeOvereenkomst": "01"
+      }
+    ],
+    "arbeidsmarktkwalificatie": {
+      "codeWerkEnDenkniveauWerkzoekende": 4,
+      "vakvaardigheid": [
+        {
+          "omschrijving": "string"
+        }
+      ],
+      "taalbeheersing": [
+        {
+          "codeTaal": "str",
+          "codeNiveauTaalbeheersingMondeling": 4,
+          "codeNiveauTaalbeheersingSchriftelijk": 4,
+          "codeNiveauTaalbeheersingLezen": 4,
+          "codeNiveauTaalbeheersingLuisteren": 4
+        }
+      ],
+      "gedragscompetentie": [
+        {
+          "codeGedragscompetentie": 24112,
+          "omschrijvingGedragscompetentie": "string",
+          "codeBeheersingGedragscompetentie": 1
+        }
+      ],
+      "rijbewijs": [
+        {
+          "codeSoortRijbewijs": "B"
+        }
+      ],
+      "cursus": [
+        {
+          "naamCursus": "string",
+          "datumCertificaat": "2021-11-25"
+        }
+      ],
+      "opleiding": [
+        {
+          "codeNiveauOpleiding": 1,
+          "indicatieDiploma": 1,
+          "datumDiploma": "2021-11-25",
+          "opleidingsnaam": {
+            "codeOpleidingsnaam": 1,
+            "omschrijvingOpleidingsnaam": "string"
+          }
+        }
+      ],
+      "werkervaring": [
+        {
+          "datumAanvangWerkzaamheden": "2021-11-25",
+          "datumEindeWerkzaamheden": "2021-11-25",
+          "naamOrganisatie": "string",
+          "beroep": {
+            "codeBeroepsnaam": "string",
+            "omschrijvingBeroepsnaam": "string"
+          }
+        }
+      ]
+    },
+    "sector": [
+      {
+        "codeSbi": 0
+      }
+    ],
+    "bemiddelingsberoep": [
+      {
+        "codeBeroepsnaam": "string",
+        "omschrijvingBeroepsnaam": "string"
+      },
+      {
+        "naamBeroepOngecodeerd": "string"
+      }
+    ]
+  }
+}

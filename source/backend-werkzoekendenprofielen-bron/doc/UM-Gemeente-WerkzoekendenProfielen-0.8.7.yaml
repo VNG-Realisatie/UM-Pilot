@@ -1,0 +1,1015 @@
+openapi: 3.0.1
+info:
+  title: UM API WerkzoekendeProfielen tussen UM en gemeenten
+  description: Contract tbv interactie van gemeenten met UM voor WerkzoekendenProfielen
+  contact:
+    name: VNG
+    url: https://www.vngrealisatie.nl/
+    email: realisatie@vng.nl
+  version: 0.8.7
+servers:
+- url: https://exampleurl.com
+tags:
+- name: werkzoekendeProfielen
+paths:
+  /werkzoekende/lijst/{oin}:
+    get:
+      tags:
+      - werkzoekendeProfielen
+      summary: Get werkzoekenden
+      description: Get werkzoekenden from DB
+      operationId: getAll
+      parameters:
+      - name: oin
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Geen authorizatie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Werkzoekende'
+    post:
+      tags:
+      - werkzoekendeProfielen
+      summary: Post werkzoekenden
+      description: Post werkzoekenden to a given OIN
+      operationId: createWerkzoekendeList
+      parameters:
+      - name: oin
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Werkzoekende'
+        required: true
+      responses:
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Geen authorizatie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Werkzoekende'
+components:
+  schemas:
+    Error:
+      required:
+      - code
+      - message
+      type: object
+      properties:
+        code:
+          maxLength: 10
+          minLength: 0
+          type: string
+        message:
+          maxLength: 500
+          minLength: 0
+          type: string
+        details:
+          maxLength: 2000
+          minLength: 0
+          type: string
+    Arbeidsmarktkwalificatie:
+      type: object
+      properties:
+        codeWerkEnDenkniveauWerkzoekende:
+          maximum: 7
+          minimum: 0
+          type: integer
+          description: |-
+            Code die het opleidingsniveau aangeeft dat bereikt is op basis van opleiding en/of werkervaring.
+
+            - 0 = niet van toepassing
+            - 1 = geen basisopleiding
+            - 2 = basisniveau
+            - 3 = vmbo-niveau
+            - 4 = mbo/havo/vwo-niveau
+            - 5 = hbo-niveau
+            - 6 = wetenschappelijk onderwijs
+            - 7 = (nog) niet bekend
+          format: int32
+        vakvaardigheid:
+          type: array
+          description: Het vermogen om een handeling in een bepaalde mate bekwaam
+            uit te voeren.
+          items:
+            $ref: '#/components/schemas/Vakvaardigheid'
+        taalbeheersing:
+          type: array
+          description: De mate waarin een natuurlijk persoon een taal beheerst.
+          items:
+            $ref: '#/components/schemas/Taalbeheersing'
+        gedragscompetentie:
+          type: array
+          description: De karaktereigenschappen van een natuurlijk persoon.
+          items:
+            $ref: '#/components/schemas/Gedragscompetentie'
+        interesse:
+          type: array
+          description: Een onderwerp waar de werkzoekende belangstelling voor heeft.
+          items:
+            $ref: '#/components/schemas/Interesse'
+        rijbewijs:
+          type: array
+          description: |-
+            Geautoriseerd document om een motorvoertuig over de weg te mogen besturen.
+
+            Norminstantie: SGR
+          items:
+            $ref: '#/components/schemas/Rijbewijs'
+        cursus:
+          type: array
+          description: "De cursus die de werkzoekende volgt, heeft gevolgd of heeft\
+            \ ingepland om te gaan volgen."
+          items:
+            $ref: '#/components/schemas/Cursus'
+        opleiding:
+          type: array
+          description: De scholing die de werkzoekende volgt of heeft gevolgd.
+          items:
+            $ref: '#/components/schemas/Opleiding'
+        werkervaring:
+          type: array
+          description: De werkzaamheden die een natuurlijk persoon in een bepaalde
+            periode als beroep heeft uitgevoerd.
+          items:
+            $ref: '#/components/schemas/Werkervaring'
+      description: "De set van eigenschappen, kennis en kunde die een werkzoekende\
+        \ bezit en relevant zijn voor het vinden van werk."
+    Beroepsnaam:
+      title: Beroepsnaam
+      type: object
+      oneOf:
+      - $ref: '#/components/schemas/BeroepsnaamGecodeerd'
+      - $ref: '#/components/schemas/BeroepsnaamOngecodeerd'
+    BeroepsnaamGecodeerd:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/Beroepsnaam'
+      - type: object
+        properties:
+          codeBeroepsnaam:
+            maxLength: 10
+            minLength: 0
+            type: string
+            description: De unieke code van de beroepsnaam uit het BO&C register.
+          omschrijvingBeroepsnaam:
+            maxLength: 120
+            minLength: 0
+            type: string
+            description: De naam van het BEROEP.
+    BeroepsnaamOngecodeerd:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/Beroepsnaam'
+      - type: object
+        properties:
+          naamBeroepOngecodeerd:
+            maxLength: 120
+            minLength: 0
+            type: string
+            description: De omschrijving van het BEROEP.
+    ContactpersoonAfdeling:
+      type: object
+      properties:
+        naamContactpersoonAfdeling:
+          maxLength: 35
+          minLength: 0
+          type: string
+          description: De naam van de CONTACTPERSOON/-AFDELING
+        telefoonnummer:
+          pattern: "^(0|(\\+|00)31)(([1-9]([0-9]){8})|(6-?[1-9]([0-9]){7})|([1-57-9]\\\
+            d-?[1-9]([0-9]){6})|([1-57-9]\\d{2}-?[1-9]([0-9]){5}))$"
+          type: string
+          description: Het telefoonnummer waaronder een PERSOON of ORGANISATIE bereikbaar
+            is.
+        emailadres:
+          pattern: ^\S+@\S+\.\S+$
+          type: string
+          description: Het adres waaronder een PERSOON of ORGANISATIE per elektronische
+            post bereikbaar is.
+      description: |-
+        De PERSOON of de afdeling van een ORGANISATIE waarbij een derde, voor deze in een specifieke situatie relevante, informatie kan verkrijgen.
+
+        Norminstantie: SGR
+    Contractvorm:
+      type: object
+      properties:
+        codeTypeArbeidscontract:
+          maxLength: 1
+          minLength: 0
+          type: string
+          description: |-
+            De code die aangeeft of het arbeidscontract voor bepaalde of onbepaalde tijd van toepassing is.
+
+            - B = Bepaalde tijd
+            - O = Onbepaalde tijd
+          enum:
+          - B
+          - O
+        codeTypeOvereenkomst:
+          maxLength: 2
+          minLength: 0
+          type: string
+          description: |-
+            De code die aangeeft welk type overeenkomst van toepassing is.
+
+            - 01 = Reguliere vacature
+            - 02 = Leerbaan
+            - 03 = Vrijwilligerswerk
+            - 04 = Werkervaringsplaats
+          enum:
+          - "01"
+          - "02"
+          - "03"
+          - "04"
+      description: De contractvorm welke van toepassing is.
+    Cursus:
+      type: object
+      properties:
+        naamCursus:
+          maxLength: 120
+          minLength: 0
+          type: string
+          description: De naam van de cursus zoals deze bekend staat.
+        datumCertificaat:
+          type: string
+          description: De datum van de dag die op het certificaat staat.
+          format: date
+        datumAanvangVolgenCursus:
+          type: string
+          description: De datum van de eerste dag waarop de cursus wordt of is gevolgd.
+          format: date
+        datumEindeVolgenCursus:
+          type: string
+          description: De datum van de laatste dag dat de cursus is gevolgd.
+          format: date
+        naamOpleidingsinstituut:
+          maxLength: 500
+          minLength: 0
+          type: string
+          description: De naam van het instituut waar de opleiding of cursus is gevolgd.
+      description: "De cursus die de werkzoekende volgt, heeft gevolgd of heeft ingepland\
+        \ om te gaan volgen."
+    EisAanWerk:
+      type: object
+      properties:
+        indicatieAanpassingWerkomgeving:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of de werkzoekende een vorm van aanpassing aan de werkomgeving nodig heeft om te kunnen functioneren.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        indicatieBegeleiding:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of de werkzoekende een vorm van begeleiding nodig heeft om te kunnen functioneren.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        indicatieWerkvariatie:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of de werkzoekende een vorm van werkvariatie nodig heeft om te kunnen functioneren.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+      description: "De werkomstandigheden en/of de inhoud van het werk die aanwezig\
+        \ moeten zijn, zodat de werkzoekende het werk uit kan voeren."
+    Flexibiliteit:
+      type: object
+      properties:
+        codeRegiostraal:
+          maximum: 9
+          minimum: 0
+          type: integer
+          description: |-
+            De code die aangeeft wat de straal is, ten opzichte van het werklocatieadres, waarbinnen de werkzaamheden verricht zullen worden.
+
+            - 1 = 5 km
+            - 2 = 10 km
+            - 3 = 15 km
+            - 4 = 25 km
+            - 5 = 50 km
+            - 6 = 75 km
+            - 7 = 100 km
+            - 8 = 125 km
+            - 9 = 150 km
+          format: int32
+        indicatieOnregelmatigWerkOfPloegendienst:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of het werk op onregelmatige tijden en/of in ploegendienst plaatsvindt.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        datumAanvangBeschikbaarVoorWerk:
+          type: string
+          description: De datum van de eerste werkdag.
+          format: date
+        datumEindeBeschikbaarVoorWerk:
+          type: string
+          description: De datum van de laatste werkdag.
+          format: date
+      description: |-
+        De bereidheid van de werkzoekende om concessies te doen aan de eisen die hij stelt aan het aanvaarden van arbeid.
+
+        Norminstantie: SGR
+    Gedragscompetentie:
+      type: object
+      properties:
+        codeGedragscompetentie:
+          type: integer
+          description: |-
+            De code die de GEDRAGSCOMPETENTIE aangeeft.
+
+            - 24100 = Beslissen en activiteiten initiëren
+            - 24101 = Aansturen
+            - 24102 = Begeleiden
+            - 24104 = Aandacht en begrip tonen
+            - 24105 = Samenwerken en overleggen
+            - 24106 = Ethisch en integer handelen
+            - 24107 = Relaties bouwen en netwerken
+            - 24108 = Overtuigen en beïnvloeden
+            - 24109 = Presenteren
+            - 24110 = Formuleren en rapporteren
+            - 24111 = Vakdeskundigheid toepassen
+            - 24112 = Materialen en middelen inzetten
+            - 24113 = Analyseren
+            - 24114 = Onderzoeken
+            - 24115 = Creeren en innoveren
+            - 24116 = Leren
+            - 24118 = Plannen en organiseren
+            - 24119 = Op de behoeften en verwachtingen van de klant richten
+            - 24120 = Kwaliteit leveren
+            - 24121 = Instructies en procedures opvolgen
+            - 24122 = Omgaan met verandering en aanpassen
+            - 24123 = Met druk en tegenslag omgaan
+            - 24124 = Gedrevenheid en ambitie tonen
+            - 24125 = Ondernemend en commercieel handelen
+            - 24126 = Bedrijfsmatig handelen
+          format: int32
+          enum:
+          - 24100
+          - 24101
+          - 24102
+          - 24104
+          - 24105
+          - 24106
+          - 24107
+          - 24108
+          - 24109
+          - 24110
+          - 24111
+          - 24112
+          - 24113
+          - 24114
+          - 24115
+          - 24116
+          - 24118
+          - 24119
+          - 24120
+          - 24121
+          - 24122
+          - 24123
+          - 24124
+          - 24125
+          - 24126
+        omschrijvingGedragscompetentie:
+          maxLength: 120
+          minLength: 0
+          type: string
+          description: De omschrijving van de GEDRAGSCOMPETENTIE.
+        codeBeheersingGedragscompetentie:
+          type: integer
+          description: |-
+            De code die aangeeft in welke mate de gedragscompetentie beheerst wordt.
+
+            - 1 = Goed
+            - 2 = Voldoende
+            - 3 = Onvoldoende
+            - 4 = Niet
+            - 5 = Onderzoek noodzakelijk
+            - 9 = Niet van toepassing
+          format: int32
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 9
+      description: De karaktereigenschappen van een natuurlijk persoon.
+    Interesse:
+      type: object
+      properties:
+        naamInteresse:
+          maxLength: 120
+          minLength: 0
+          type: string
+          description: De naam van een interesse zoals deze is opgegeven door werkzoekende
+            of werkgever.
+      description: Een onderwerp waar de werkzoekende belangstelling voor heeft.
+    Mobiliteit:
+      type: object
+      properties:
+        bemiddelingspostcode:
+          pattern: "^[1-9][0-9]{3}(?!sa|sd|ss)[a-z]{2}$/i"
+          type: string
+          description: De postcode van waaruit de werkzoekende bemiddeld wenst te
+            worden.
+        maximaleReisafstand:
+          maximum: 999
+          minimum: 0
+          type: integer
+          description: "De maximale afstand, uitgedrukt in kilometers, waarbinnen\
+            \ de werkzoekende wil worden bemiddeld."
+          format: int32
+        maximaleReistijd:
+          maximum: 999
+          minimum: 0
+          type: integer
+          description: De maximale acceptabele reistijd in minuten die de werkzoekende
+            accepteert in verband met het verrichten van werk.
+          format: int32
+      description: Gewenste reisafstand woon-werk.
+    Opleiding:
+      type: object
+      properties:
+        codeNiveauOpleiding:
+          type: integer
+          description: |-
+            De code die het niveau van de OPLEIDING aangeeft.
+
+            - 1 = Basisonderwijs
+            - 2 = VMBO
+            - 3 = HAVO/VWO
+            - 4 = MBO
+            - 5 = HBO/Bachelor
+            - 6 = WO/Master
+            - 9 = Anders
+          format: int32
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 9
+        indicatieDiploma:
+          type: integer
+          description: |-
+            Indicatie die aangeeft of voor de OPLEIDING een diploma, een getuigschrift of één of meer (deel-)certifica(a)t(en) is behaald.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+            - 8 = Niet van toepassing
+          format: int32
+          enum:
+          - 0
+          - 1
+          - 2
+          - 8
+        datumDiploma:
+          type: string
+          description: De datum van de dag die op het diploma staat.
+          format: date
+        opleidingsnaam:
+          $ref: '#/components/schemas/Opleidingsnaam'
+        datumAanvangVolgenOpleiding:
+          type: string
+          description: De datum van de eerste dag waarop de opleiding wordt of is
+            gevolgd.
+          format: date
+        datumEindeVolgenOpleiding:
+          type: string
+          description: De datum van de laatste dag dat de opleiding is gevolgd.
+          format: date
+        codeStatusOpleiding:
+          maximum: 3
+          minimum: 0
+          type: integer
+          description: |-
+            Code die aangeeft in welk stadium de OPLEIDING zich bevindt.
+
+            - 0 = Onbekend
+            - 1 = Succesvol afgerond
+            - 2 = Afgebroken
+            - 3 = Lopend
+          format: int32
+        naamOpleidingsinstituut:
+          maxLength: 500
+          minLength: 0
+          type: string
+          description: De naam van het instituut waar de opleiding of cursus is gevolgd.
+      description: De scholing die de werkzoekende volgt of heeft gevolgd.
+    Opleidingsnaam:
+      title: Opleidingsnaam
+      type: object
+      description: |-
+        De naamgegevens van een OPLEIDING.
+
+        Norminstantie: SGR
+      oneOf:
+      - $ref: '#/components/schemas/OpleidingsnaamGecodeerd'
+      - $ref: '#/components/schemas/OpleidingsnaamOngecodeerd'
+    OpleidingsnaamGecodeerd:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/Opleidingsnaam'
+      - type: object
+        properties:
+          codeOpleidingsnaam:
+            maximum: 9999999999
+            minimum: 0
+            type: integer
+            description: De unieke code van een OPLEIDINGSNAAM.
+            format: int64
+          omschrijvingOpleidingsnaam:
+            maxLength: 120
+            minLength: 0
+            type: string
+            description: De naam van de OPLEIDING.
+    OpleidingsnaamOngecodeerd:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/Opleidingsnaam'
+      - type: object
+        properties:
+          naamOpleidingOngecodeerd:
+            maxLength: 120
+            minLength: 0
+            type: string
+            description: De omschrijving van de OPLEIDING.
+          omschrijvingOpleiding:
+            maxLength: 2000
+            minLength: 0
+            type: string
+            description: De eigen omschrijving van de opleiding.
+    Rijbewijs:
+      type: object
+      properties:
+        codeSoortRijbewijs:
+          maxLength: 3
+          minLength: 0
+          type: string
+          description: |-
+            De code die de rijbewijscategorie aangeeft.
+
+            - A = Zware motor met onbeperkt vermogen
+            - A1 = Lichte motor, 125 cc en maximaal vermogen van 11 kilowatt (kW)
+            - A2 = Middelzware motor, Maximaal vermogen van 35 kilowatt (kW)
+            - AM = Bromfiets en snorfiets
+            - B = Auto
+            - B+ = Auto, eventueel met aanhangwagen van meer dan 750kg met een maximum van 4250 kilo (auto + aanhanger)
+            - C1 = Lichte vrachtwagen met een maximaal gewicht van 7500kg, eventueel met aanhangwagen tot 750kg
+            - C = Vrachtwagen met een gewicht van meer dan 3500kg, eventueel met aanhangwagen tot 750kg
+            - D1 = Bus voor meer dan 8 en maximaal 16 zitplaatsen, exclusief de bestuurder). Maximale lengte bus 8 meter.
+            - D = Bus voor meer dan 8 personen, eventueel met aanhangwagen tot 750kg
+            - BE = Auto, eventueel met aanhangwagen van meer dan 750kg met een maximum van 3500 kilo (auto + aanhanger)
+            - C1E = Lichte vrachtwagen met een maximaal gewicht van 7500kg, eventueel met aanhangwagen van meer dan 750kg
+            - CE = Vrachtwagen met een gewicht van meer dan 3500kg, eventueel met aanhangwagen van meer dan 750kg
+            - D1E = Bus voor maximaal 16 personen excl. bestuurder, eventueel met aanhangwagen van meer dan 750kg
+            - DE = Bus voor meer dan 8 personen, eventueel met aanhangwagen van meer dan 750kg
+            - T = Trekker
+          enum:
+          - A
+          - A1
+          - A2
+          - AM
+          - B
+          - B+
+          - C1
+          - C
+          - D1
+          - D
+          - BE
+          - C1E
+          - CE
+          - D1E
+          - DE
+          - T
+      description: |-
+        Geautoriseerd document om een motorvoertuig over de weg te mogen besturen.
+
+        Norminstantie: SGR
+    SectorBeroepsEnBedrijfsleven:
+      type: object
+      properties:
+        codeSbi:
+          maximum: 99999
+          minimum: 0
+          type: integer
+          description: De code die de indeling van een bedrijf aangeeft volgens de
+            Standaard Bedrijfs Indeling van het Centraal Bureau voor de Statistiek.
+          format: int32
+      description: De sector bedroeps- en bedrijfsleven waarin de werkzoekende bemiddeld
+        wenst te worden.
+    Taalbeheersing:
+      type: object
+      properties:
+        codeTaal:
+          maxLength: 3
+          minLength: 0
+          pattern: "^[a-z]{3}$"
+          type: string
+          description: De code die de taal aangeeft. Betreft ISO 639-3 codelijst
+        codeNiveauTaalbeheersingMondeling:
+          type: integer
+          description: |-
+            Code die de mate aangeeft waarin de natuurlijk persoon de betreffende taal mondeling machtig is.
+
+            - 0 = Onbekend
+            - 1 = Geen beheersing
+            - 2 = Redelijk
+            - 3 = Goed
+            - 4 = Uitstekend
+            - 8 = Niet van toepassing
+          format: int32
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 8
+        codeNiveauTaalbeheersingSchriftelijk:
+          type: integer
+          description: |-
+            Code die de mate aangeeft waarin de natuurlijk persoon de betreffende taal schriftelijk machtig is.
+
+            - 0 = Onbekend
+            - 1 = Geen beheersing
+            - 2 = Redelijk
+            - 3 = Goed
+            - 4 = Uitstekend
+            - 8 = Niet van toepassing
+          format: int32
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 8
+        codeNiveauTaalbeheersingLezen:
+          type: integer
+          description: |-
+            Code die die het niveau van de leesvaardigheid van de natuurlijk persoon in de betreffende taal aangeeft.
+
+            - 0 = Onbekend
+            - 1 = Geen beheersing
+            - 2 = Redelijk
+            - 3 = Goed
+            - 4 = Uitstekend
+            - 8 = Niet van toepassing
+          format: int32
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 8
+        codeNiveauTaalbeheersingLuisteren:
+          type: integer
+          description: |-
+            Code die het niveau van luistervaardigheid van de natuurlijk persoon in de betreffende taal aangeeft.
+
+            - 0 = Onbekend
+            - 1 = Geen beheersing
+            - 2 = Redelijk
+            - 3 = Goed
+            - 4 = Uitstekend
+            - 8 = Niet van toepassing
+          format: int32
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 8
+      description: De mate waarin een natuurlijk persoon een taal beheerst.
+    Vakvaardigheid:
+      type: object
+      properties:
+        omschrijving:
+          maxLength: 120
+          minLength: 0
+          type: string
+          description: De naamgeving van een handeling die in een bepaalde mate bekwaam
+            uitgevoerd kan worden.
+      description: Het vermogen om een handeling in een bepaalde mate bekwaam uit
+        te voeren.
+    Vervoermiddel:
+      type: object
+      properties:
+        indicatieBeschikbaarVoorUitvoeringWerk:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of er een vervoermiddel beschikbaar is voor het uitvoeren van de functie.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        indicatieBeschikbaarVoorWoonWerkverkeer:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of de werkzoekende het vervoermiddel ter beschikking heeft voor woon-werkverkeer.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        codeVervoermiddel:
+          type: integer
+          description: |-
+            De code die het soort vervoermiddel aangeeft.
+
+            - 1 = Auto
+            - 2 = Bromfiets
+            - 3 = Fiets
+            - 4 = Motor
+            - 5 = Openbaar vervoer
+            - 9 = Anders
+          format: int32
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 9
+      description: Een object dat bedoeld is om personen of goederen te vervoeren.
+    Voorkeursland:
+      type: object
+      properties:
+        landencodeIso:
+          maxLength: 2
+          minLength: 0
+          pattern: "^[A-Z]{2}$"
+          type: string
+          description: |-
+            De code van een huidig land of gebiedsdeel conform ISO 3166.
+
+            Norminstantie: ISO 3166 (Entity, Alpha-2 code)
+      description: Het land waarin de werkzoekende bij voorkeur wil gaan werken.
+    Webadres:
+      type: object
+      properties:
+        codeWebadres:
+          maximum: 2
+          minimum: 1
+          type: integer
+          description: |-
+            De code die het soort webadres aangeeft.
+
+            - 1 = Webadres werkzoekende profiel (webadres waarop een profielbeschrijving van de werkzoekende is te vinden)
+            - 2 = Webadres CV (webadres waarop het CV van  een werkzoekende te vinden is)
+          format: int32
+        url:
+          pattern: "^((?:https?:\\/\\/)?[^./]+(?:\\.[^./]+)+(?:\\/.*)?)$"
+          type: string
+          description: 'De Uniform Resource Locator (URL) van het (web)adres van een
+            bestand. '
+      description: De gegevens waarmee een webadres geïdentificeerd kan worden.
+    Werkervaring:
+      type: object
+      properties:
+        datumAanvangWerkzaamheden:
+          type: string
+          description: De datum van de eerste dag van de werkzaamheden.
+          format: date
+        datumEindeWerkzaamheden:
+          type: string
+          description: De datum van de laatste dag van de werkzaamheden.
+          format: date
+        naamOrganisatie:
+          maxLength: 70
+          minLength: 0
+          type: string
+          description: De naam waaronder de organisatie bekend is.
+        beroep:
+          $ref: '#/components/schemas/Beroepsnaam'
+        toelichtingWerkervaring:
+          maxLength: 2000
+          minLength: 0
+          type: string
+          description: De toelichting op de WERKERVARING.
+      description: De werkzaamheden die een natuurlijk persoon in een bepaalde periode
+        als beroep heeft uitgevoerd.
+    Werktijden:
+      type: object
+      properties:
+        aantalWerkurenPerWeekMinimaal:
+          maximum: 99
+          minimum: 0
+          type: integer
+          description: Het aantal dat de hoeveelheid minimale werkuren per week aangeeft.
+          format: int32
+        aantalWerkurenPerWeekMaximaal:
+          maximum: 99
+          minimum: 0
+          type: integer
+          description: Het aantal dat de hoeveelheid maximale werkuren per week aangeeft.
+          format: int32
+        indicatieKantoortijden:
+          maximum: 2
+          minimum: 0
+          type: integer
+          description: |-
+            Indicatie die aangeeft of er sprake is van het deel van een dag waarin kantoorwerkzaamheden traditioneel (overdag) worden verricht.
+
+            - 0 = Onbekend
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+      description: De mate waarin de werkzoekende beschikbaar is voor werk.
+    Werkzoekende:
+      required:
+      - idWerkzoekende
+      type: object
+      properties:
+        idWerkzoekende:
+          maxLength: 200
+          minLength: 0
+          type: string
+        indicatieLdrRegistratie:
+          maximum: 2
+          minimum: 1
+          type: integer
+          description: |-
+            De indicatie die aangeeft of voor de natuurlijk persoon in het Landelijk Doelgroepregister een grondslag met betrekking tot arbeidsbeperktheid geregistreerd is.
+
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        indicatieBeschikbaarheidContactgegevens:
+          maximum: 2
+          minimum: 1
+          type: integer
+          description: |-
+            Indicatie die aangeeft of er contactgegevens, van de werkzoekende en/of de contactpersoon, in het profiel aanwezig zijn.
+
+            - 1 = Ja
+            - 2 = Nee
+          format: int32
+        persoonlijkePresentatie:
+          maxLength: 2000
+          minLength: 0
+          type: string
+          description: De persoonlijke presentatie van de werkzoekende.
+        voorkeursland:
+          type: array
+          description: Het land waarin de werkzoekende bij voorkeur wil gaan werken.
+          items:
+            $ref: '#/components/schemas/Voorkeursland'
+        eisAanWerk:
+          $ref: '#/components/schemas/EisAanWerk'
+        vervoermiddel:
+          type: array
+          description: Een object dat bedoeld is om personen of goederen te vervoeren.
+          items:
+            $ref: '#/components/schemas/Vervoermiddel'
+        mobiliteit:
+          $ref: '#/components/schemas/Mobiliteit'
+        flexibiliteit:
+          $ref: '#/components/schemas/Flexibiliteit'
+        werktijden:
+          $ref: '#/components/schemas/Werktijden'
+        contractvorm:
+          type: array
+          description: De contractvorm welke van toepassing is.
+          items:
+            $ref: '#/components/schemas/Contractvorm'
+        arbeidsmarktkwalificatie:
+          $ref: '#/components/schemas/Arbeidsmarktkwalificatie'
+        emailadres:
+          type: array
+          description: De aanduiding van de unieke aansluiting van de elektronische
+            postbus van een PERSOON of ORGANISATIE op het internet.
+          items:
+            pattern: ^\S+@\S+\.\S+$
+            type: string
+            description: Het adres waaronder een PERSOON of ORGANISATIE per elektronische
+              post bereikbaar is.
+        webadres:
+          type: array
+          description: De gegevens waarmee een webadres geïdentificeerd kan worden.
+          items:
+            $ref: '#/components/schemas/Webadres'
+        telefoonnummer:
+          type: array
+          description: Het telefoonnummer waaronder een PERSOON of ORGANISATIE bereikbaar
+            is.
+          items:
+            pattern: "^(0|(\\+|00)31)(([1-9]([0-9]){8})|(6-?[1-9]([0-9]){7})|([1-57-9]\\\
+              d-?[1-9]([0-9]){6})|([1-57-9]\\d{2}-?[1-9]([0-9]){5}))$"
+            type: string
+            description: Het telefoonnummer waaronder een PERSOON of ORGANISATIE bereikbaar
+              is.
+        contactpersoon:
+          type: array
+          description: |-
+            De PERSOON of de afdeling van een ORGANISATIE waarbij een derde, voor deze in een specifieke situatie relevante, informatie kan verkrijgen.
+
+            Norminstantie: SGR
+          items:
+            $ref: '#/components/schemas/ContactpersoonAfdeling'
+        sector:
+          type: array
+          description: De sector bedroeps- en bedrijfsleven waarin de werkzoekende
+            bemiddeld wenst te worden.
+          items:
+            $ref: '#/components/schemas/SectorBeroepsEnBedrijfsleven'
+        bemiddelingsberoep:
+          type: array
+          items:
+            $ref: '#/components/schemas/Beroepsnaam'
