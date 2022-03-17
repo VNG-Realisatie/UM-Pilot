@@ -7,8 +7,8 @@ UM bestaat uit twee software componenten.
 Beiden componenten zijn te vinden in dit project.
 In de main is de documentatie voor UM en de externe vertaalapplicatie te vinden.
 
-Deze software is bedoeld als beproeving van de architectuurprincipes en omvat de MVP functionaliteit van UM.
-De software is nog in ontwikkeling.
+Deze software is nog in ontwikkeling en is bedoeld als beproeving van de architectuurprincipes en omvat de MVP functionaliteit van UM.
+Deze functionaliteit is voldoende om de VUM pilots te kunnen ondersteunen.
 
 
 
