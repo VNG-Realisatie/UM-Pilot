@@ -1,3 +1,12 @@
+Aangezien niet te achterhalen was welk Kennis Centrum, Team of Project eigenaar is van dit project, geen persoon is gevonden die dat eigenaarschap invult en de repository als 3 jaar ongewijzigd is, is besloten deze repository op 11-9-2025 te archiveren.
+Benader, indien dat toch ongewenst is, een van de VNG Realisatie GitHub Organisatie Administrators:
+
+* Robert Melskens
+* Michiel Verhoef
+* Peter Makkes
+* Mark Backer
+* Sander van Thillo
+
 # UM-Pilot
 
 UM bestaat uit twee software componenten.
